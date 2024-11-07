@@ -2,11 +2,12 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from torch import load, no_grad, cat
 from torch import from_numpy
-from CNN.Dataset import ImageDataset
+from dataset import ImageDataset
 from utilities import instantiate_network, register_hooks
 import matplotlib.pyplot as plt
 from skimage.color import lab2rgb
 import json
+import os
 
 
 def test_model(model_file, file_name, color_dir, gray_dir=None, architecture=1, show_images=True):
@@ -27,8 +28,11 @@ def test_model(model_file, file_name, color_dir, gray_dir=None, architecture=1, 
     cnn = instantiate_network(architecture)
     cnn.load_state_dict(load(model_file)["model_state_dict"])
 
+    if not os.path.exists("output"):
+        os.mkdir("output")
+    
     # Grid setup.
-    columns = 5
+    columns = 4
     rows = 3
 
     data_iterator = iter(data_loader)

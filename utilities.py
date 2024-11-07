@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from CNN.Network import Network1, Network2, Network3, Network4, Network5, Network6
+from network import Network1, Network2, Network3, Network4, Network5, Network6
 
 
 def plot_loss(loss, title, filename):

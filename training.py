@@ -1,11 +1,13 @@
 from torch.utils.data import DataLoader
-from CNN.Dataset import ImageDataset
+from dataset import ImageDataset
 import torch.optim as optim
 import torch.nn as nn
 from torch import save, load
 from utilities import instantiate_network
 import json
 import time
+import torch
+import os
 
 
 def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, architecture=1, file_name="cnn", model=None):
@@ -24,7 +26,16 @@ def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, archit
     training_data = ImageDataset(color_dir=color_dir, gray_dir=gray_dir)
     train_data_loader = DataLoader(training_data, batch_size=32, shuffle=True)
 
-    cnn = instantiate_network(architecture)
+    # choosing the device
+    device_name = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Using {device_name}")
+    device = torch.device(device_name)
+
+
+    if not os.path.exists("figures"):
+        os.mkdir("figures")
+
+    cnn = instantiate_network(architecture).to(device)
     criterion = nn.MSELoss()
     optimizer = optim.Adam(cnn.parameters(), lr=learning_rate)
 
@@ -49,12 +60,13 @@ def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, archit
         epoch_running_loss = 0
         for i, data in enumerate(train_data_loader, 0):
             gray, color = data
-            gray = gray.float()
-            color = color.float()
-
-            outputs = cnn(gray)
+            
+            gray = gray.to(device).float()
+            color = color.to(device).float()
 
             optimizer.zero_grad()
+            outputs = cnn(gray)
+
             loss = criterion(outputs, color)
             loss.backward()
             optimizer.step()
