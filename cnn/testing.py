@@ -2,8 +2,8 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 from torch import load, no_grad, cat
 from torch import from_numpy
-from dataset import ImageDataset
-from utilities import instantiate_network, register_hooks
+from .dataset import ImageDataset
+from .utilities import instantiate_network, register_hooks
 import matplotlib.pyplot as plt
 from skimage.color import lab2rgb
 import json
@@ -26,7 +26,7 @@ def test_model(model_file, file_name, color_dir, gray_dir=None, architecture=1, 
 
     # Loading the NN and passing the data.
     cnn = instantiate_network(architecture)
-    cnn.load_state_dict(load(model_file)["model_state_dict"])
+    cnn.load_state_dict(load(model_file, weights_only=True)["model_state_dict"])
 
     if not os.path.exists("output"):
         os.mkdir("output")
@@ -140,7 +140,7 @@ def calculate_loss(model_file, file_name, color_dir, gray_dir=None, architecture
 
     # Loading the NN and passing the data.
     cnn = instantiate_network(architecture)
-    cnn.load_state_dict(load(model_file)["model_state_dict"])
+    cnn.load_state_dict(load(model_file, weights_only=True)["model_state_dict"])
 
     data_iterator = iter(data_loader)
 
@@ -199,7 +199,7 @@ def render_layer_output(model_file, architecture, file_name, color_dir, number_o
     # Loading the NN and passing the data.
     cnn = instantiate_network(architecture)
     cnn, layers = register_hooks(cnn, architecture, get_activation)
-    cnn.load_state_dict(load(model_file)["model_state_dict"])
+    cnn.load_state_dict(load(model_file, weights_only=True)["model_state_dict"])
 
     gray, color = next(iter(data_loader), None)
 

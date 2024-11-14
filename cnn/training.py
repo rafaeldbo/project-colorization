@@ -1,16 +1,16 @@
 from torch.utils.data import DataLoader
-from dataset import ImageDataset
+from .dataset import ImageDataset
 import torch.optim as optim
 import torch.nn as nn
 from torch import save, load
-from utilities import instantiate_network
+from .utilities import instantiate_network
 import json
 import time
 import torch
 import os
 
 
-def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, architecture=1, file_name="cnn", model=None):
+def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, architecture=1, file_name="cnn", model=None, size=4):
     """
     Trains the model with the given examples.
     :param color_dir: The directory where the colored images are stored.
@@ -23,7 +23,7 @@ def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, archit
     :param model: (Optional) The pre-trained model.
     """
     # Loading Dataset and creating the corresponding DataLoader.
-    training_data = ImageDataset(color_dir=color_dir, gray_dir=gray_dir)
+    training_data = ImageDataset(color_dir=color_dir, gray_dir=gray_dir, size=size)
     train_data_loader = DataLoader(training_data, batch_size=32, shuffle=True)
 
     # choosing the device
@@ -32,8 +32,8 @@ def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, archit
     device = torch.device(device_name)
 
 
-    if not os.path.exists("figures"):
-        os.mkdir("figures")
+    # if not os.path.exists("figures"):
+    #     os.mkdir("figures")
 
     cnn = instantiate_network(architecture).to(device)
     criterion = nn.MSELoss()
@@ -81,14 +81,14 @@ def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, archit
                 "optimizer_state_dict": optimizer.state_dict(),
                 "time": time.time() - start + initial_time,
                 "running_losses": running_losses
-            }, f"./{file_name}_{learning_rate}_{epoch}.pt")
+            }, f"./checkpoints/{file_name}_{learning_rate}_{epoch}.pt")
     print("Finished")
 
     results = {"losses": running_losses}
 
-    # Store losses in json file
-    with open(f"figures/training_{file_name}_{learning_rate}_losses.json", "w") as results_file:
-        json.dump(results, results_file)
+    # # Store losses in json file
+    # with open(f"figures/training_{file_name}_{learning_rate}_losses.json", "w") as results_file:
+    #     json.dump(results, results_file)
 
     save({
         "epoch": epoch,
@@ -96,4 +96,4 @@ def train_model(color_dir, gray_dir=None, epochs=50, learning_rate=0.001, archit
         "optimizer_state_dict": optimizer.state_dict(),
         "time": time.time() - start + initial_time,
         "running_losses": running_losses
-    }, f"./{file_name}_{learning_rate}_full.pt")
+    }, f"./models/{file_name}_{learning_rate}_full.pt")

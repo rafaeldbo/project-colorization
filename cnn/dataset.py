@@ -6,7 +6,7 @@ from skimage.color import rgb2lab
 
 
 class ImageDataset(Dataset):
-    def __init__(self, color_dir, gray_dir = None, transform = None, target_transform = None):
+    def __init__(self, color_dir, gray_dir = None, transform = None, target_transform = None, size=4):
         """
         :param color_dir: The directory where the colored images are located at.
         :param gray_dir: (Optional) The directory where the gray image are located at.
@@ -14,7 +14,7 @@ class ImageDataset(Dataset):
         :param transform: (Optional) `transform` function to be applied on a gray image.
         :param target_transform: (Optional) `transform` function to be applied on a colored image.
         """
-        self.names = os.listdir(color_dir)[:4]
+        self.names = os.listdir(color_dir)[:size]
         self.color_dir = color_dir
         self.gray_dir = gray_dir
         self.transform = transform
