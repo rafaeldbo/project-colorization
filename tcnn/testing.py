@@ -26,6 +26,7 @@ def test_model(model:nn.Module, model_name:str, images_folder:str, dir:str='./',
     # Grid setup.
     columns = 4
 
+    print("Testing the model.")
     # Creating an image grid to showcase the results.
     for j,  batch in enumerate(data_loader):
         gray, color, category = batch

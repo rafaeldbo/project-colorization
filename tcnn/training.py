@@ -12,7 +12,7 @@ def train_model(
     model: nn.Module,
     model_name: str,
     images_folder: str,
-    dir: str = './',
+    dir: str = "./",
     from_checkpoint: bool = False,
     checkpoint_period: int = 25,
     amount_images: int = 4,
@@ -26,15 +26,11 @@ def train_model(
 ) -> None:
 
     # Checking multiprocessing parameters are valid.
-    # if prefetch_factor is not None:
-    #     if num_workers > 0:
-    #         pin_memory = True
-    #     else:
-    #         raise Exception(
-    #             "You need to have at least one worker to use the prefetch_factor."
-    #         )
+    if prefetch_factor is not None and num_workers == 0:
+        raise Exception("You need to have at least one worker to use the prefetch_factor.")
 
     # Loading Dataset and creating the corresponding DataLoader.
+    print("Loading dataset.")
     data = ImageDataset(dir, images_folder, amount_images)
     dataloader = DataLoader(
         data,
@@ -58,7 +54,7 @@ def train_model(
 
     # choosing the device
     device_name = "cuda" if torch.cuda.is_available() and cuda else "cpu"
-    print(f"Using {device_name}")
+    print(f"Training using [{device_name}].")
     device = torch.device(device_name)
 
     cnn = model().to(device)
@@ -71,6 +67,7 @@ def train_model(
     # Checking if there is a pre-trained model to be loaded.
     if from_checkpoint:
         if path.isfile(checkpoint_file):
+            print("Loading checkpoint")
             checkpoint = load(checkpoint_file, weights_only=True)
             cnn.load_state_dict(checkpoint["model_state_dict"])
             optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
@@ -86,48 +83,66 @@ def train_model(
 
     print(f"Number of parameters: {sum(p.numel() for p in cnn.parameters())}")
 
-    start = time.time()
-    for epoch in range(epochs):
-        epoch_running_loss = 0
-        for i, data in enumerate(dataloader):
-            gray, color, category = data
+    try:
+        start = time.time()
+        for epoch in range(epochs):
+            epoch_running_loss = 0
+            for i, data in enumerate(dataloader):
+                gray, color, category = data
 
-            gray = gray.to(device)
-            color = color.to(device)
-            category = category.to(device)
+                gray = gray.to(device)
+                color = color.to(device)
+                category = category.to(device)
 
-            optimizer.zero_grad()
-            outputs = cnn(gray, category, category)
+                optimizer.zero_grad()
+                outputs = cnn(gray, category, category)
 
-            loss = criterion(outputs, color)
-            loss.backward()
-            optimizer.step()
+                loss = criterion(outputs, color)
+                loss.backward()
+                optimizer.step()
 
-            epoch_running_loss += loss.item()
-            print(f'[{epoch+1:2d}, {i + 1:3d}] loss: {loss.item()/2000:.3f}')
-        running_losses.append(epoch_running_loss)
+                epoch_running_loss += loss.item()
+                print(f"[{epoch+1:2d}, {i + 1:3d}] loss: {loss.item()/2000:.3f}")
+            running_losses.append(epoch_running_loss)
 
-        # Saving the model every checkpoint_period epochs.
-        if (epoch % checkpoint_period == 0) and (epoch < epochs) and (epoch != 0):
-            print('Saving checkpoint')
-            save(
-                {
-                    "epoch": epoch,
-                    "model_state_dict": cnn.state_dict(),
-                    "optimizer_state_dict": optimizer.state_dict(),
-                    "time": time.time() - start + initial_time,
-                    "running_losses": running_losses,
-                },
-                f"./checkpoints/{model_name}_checkpoint.pt",
-            )
+            # Saving the model every checkpoint_period epochs.
+            current_epoch = epoch + 1
+            if ((current_epoch) % checkpoint_period == 0) and (current_epoch < epochs):
+                print("Saving checkpoint.")
+                save(
+                    {
+                        "epoch": epoch,
+                        "model_state_dict": cnn.state_dict(),
+                        "optimizer_state_dict": optimizer.state_dict(),
+                        "time": time.time() - start + initial_time,
+                        "running_losses": running_losses,
+                    },
+                    f"./checkpoints/{model_name}_checkpoint.pt",
+                )
+            elipsed_time = time.time()-start
+            print(f"{round(elipsed_time//60):02d}:{round(elipsed_time%60):02d} elapsed minutes.")
 
-    print("Finished")
-    # Saving the final model.
-    save(
-        {
-            "epoch": epoch,
-            "model_state_dict": cnn.state_dict(),
-            "optimizer_state_dict": optimizer.state_dict(),
-            "time": time.time() - start + initial_time,
-            "running_losses": running_losses
-        }, f"./models/{model_name}.pt")
+        print(f"Training finished.")
+        # Saving the final model. 
+        save(
+            {
+                "epoch": epoch,
+                "model_state_dict": cnn.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+                "time": time.time() - start + initial_time,
+                "running_losses": running_losses
+            }, f"./models/{model_name}.pt",
+        )
+        
+    except KeyboardInterrupt:
+        print("Saving checkpoint.")
+        save(
+            {
+                "epoch": epoch,
+                "model_state_dict": cnn.state_dict(),
+                "optimizer_state_dict": optimizer.state_dict(),
+                "time": time.time() - start + initial_time,
+                "running_losses": running_losses
+            }, f"./checkpoints/{model_name}_checkpoint.pt",
+        )
+        raise KeyboardInterrupt("Training interrupted.")
