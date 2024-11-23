@@ -1,0 +1,6 @@
+markdown-grid-tables
+markdown-exec
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-glightbox
+termynal

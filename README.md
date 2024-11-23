@@ -1,26 +1,34 @@
-# CNN - Image Colorization
+# TCNN - Tagged Colorization Neural Network
 
-This is the codebase of an autoencoder model that attempts to solve the image colorization problem, where black and white images must be colorized properly.
+Esse é o código base de um modelo de colorização de imagens classificadas. 
 
-The entire implementation is based on [PyTorch](https://github.com/pytorch/pytorch) and the dataset used is the [Image Colorization Dataset](https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset).
+O modelo recebe uma imagem em preto e branco (escala de cinza) e, utilizando o `tema da imagem` e um `tema objetivo`, tentará colorir essa imagem a partir desses temas.
 
-## Requirements
-First of all, the dataset must be downloaded and placed in the `data` folder. To train or test models, the following libraries/modules must be installed:
-1) [PyTorch](https://github.com/pytorch/pytorch)
-2) [Torchvision](https://github.com/pytorch/vision)
-3) [Scikit-Image](https://github.com/scikit-image/scikit-image)
-4) [Matplotlib](https://github.com/matplotlib/matplotlib)
+A implemntação foi feita utilizando o [PyTorch](https://github.com/pytorch/pytorch) e o treinamento foi feito utilizando o conjunto de treinamento do dataset [Image Colorization Dataset](https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset) e a classificação manual das imagens feita por nós, disponivel em: [Categories](https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/EeRQzARO6MVGhUKujV0i_WMBwYfJvLsDrpNNzvF-rBG-KA?e=WDF7Ng). O código foi inspirado no código [cnn-image-colorization](https://github.com/gkamtzir/cnn-image-colorization) de George Kamtziridis e foi feito sob a orientação do Professor Fabio Ayres do Insper.
 
-## Output Examples
-**Examples on the testing set**
-![Example on testing set](./results/testing_example.png)
+As seguintes categorias foram usadas na classificação das imagens: `pessoas`, `alimentos`, `animais`, `veiculos`, `ambientes externos`, `ambientes internos` e `objetos`.
 
-**Examples on the training set**
-![Example on training set](./results/training_example.png)
+## Requisitos
 
-## Documentation
-The entire process is outlined in a series of Medium posts I wrote. You can read them in the following links:
-1) [Building an Image Colorization Neural Network — Part 1: Generative Models and Autoencoders](https://medium.com/mlearning-ai/building-an-image-colorization-neural-network-part-1-generative-models-and-autoencoders-d68f5769d484)
-2) [Building an Image Colorization Neural Network — Part 2: Artificial Neural Networks](https://medium.com/mlearning-ai/building-an-image-colorization-neural-network-part-2-artificial-neural-networks-ac591eb180)
-3) [Building an Image Colorization Neural Network — Part 3: Convolutional Neural Networks](https://medium.com/mlearning-ai/building-an-image-colorization-neural-network-part-3-convolutional-neural-networks-21a45ef42dde)
-4) [Building an Image Colorization Neural Network - Part 4: Implementation](https://medium.com/p/7e8bb74616c)
+Para instalar as bibliotecas python necessárias, utilize o comando (preferencialmente, em um ambiente virtual `venv`):
+```
+python -m pip install -r requirements.txt -y
+``` 
+Além disso, para treinar o modelo, também é necessário colocar os conjuntos de imagens presentes no dataset [Image Colorization Dataset](https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset) e o arquivo de categorias [Categories](https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/EeRQzARO6MVGhUKujV0i_WMBwYfJvLsDrpNNzvF-rBG-KA?e=WDF7Ng) na pasta `code/data`.
+
+## Resultados
+![Exemplo do conjunto de teste](./code/output/output_tcnn_advanced_5000_0.png)
+
+### Desenvolvedores
+* Beatriz Rodrigues de Freitas
+* Carlos Eduardo Porciuncula Yamada
+* Rafael Dourado Bastos de Oliveira
+
+### Orientação
+* Fábio José Ayres
+
+### Referências
+1) [Building an Image Colorization Neural Network](https://medium.com/@geokam/building-an-image-colorization-neural-network-part-4-implementation-7e8bb74616c)
+2) [cnn-image-colorization](https://github.com/gkamtzir/cnn-image-colorization)
+
+
