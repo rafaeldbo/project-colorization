@@ -58,9 +58,9 @@ def train_model(
     print(f"Training using [{device_name}].")
     device = torch.device(device_name)
 
-    cnn = model().to(device)
+    ecnn = model().to(device)
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(cnn.parameters(), lr=learning_rate)
+    optimizer = optim.Adam(ecnn.parameters(), lr=learning_rate)
 
     running_losses = []
 
@@ -69,10 +69,10 @@ def train_model(
         if path.isfile(checkpoint_file):
             print("Loading checkpoint")
             checkpoint = load(checkpoint_file, weights_only=True)
-            cnn.load_state_dict(checkpoint["model_state_dict"])
+            ecnn.load_state_dict(checkpoint["model_state_dict"])
             optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-            cnn.eval()
-            cnn.train()
+            ecnn.eval()
+            ecnn.train()
             initial_time = checkpoint["time"]
             running_losses = checkpoint["running_losses"]
         else:
@@ -81,7 +81,7 @@ def train_model(
     else:
         initial_time = 0
 
-    print(f"Number of parameters: {sum(p.numel() for p in cnn.parameters())}")
+    print(f"Number of parameters: {sum(p.numel() for p in ecnn.parameters())}")
 
     try:
         start = time.time()
@@ -95,7 +95,7 @@ def train_model(
                 category = category.to(device)
 
                 optimizer.zero_grad()
-                outputs = cnn(gray, category, category)
+                outputs = ecnn(gray, category)
 
                 loss = criterion(outputs, color)
                 loss.backward()
@@ -112,7 +112,7 @@ def train_model(
                 save(
                     {
                         "epoch": epoch,
-                        "model_state_dict": cnn.state_dict(),
+                        "model_state_dict": ecnn.state_dict(),
                         "optimizer_state_dict": optimizer.state_dict(),
                         "time": time.time() - start + initial_time,
                         "running_losses": running_losses,
@@ -127,7 +127,7 @@ def train_model(
         save(
             {
                 "epoch": epoch,
-                "model_state_dict": cnn.state_dict(),
+                "model_state_dict": ecnn.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "time": time.time() - start + initial_time,
                 "running_losses": running_losses
@@ -139,7 +139,7 @@ def train_model(
         save(
             {
                 "epoch": epoch,
-                "model_state_dict": cnn.state_dict(),
+                "model_state_dict": ecnn.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
                 "time": time.time() - start + initial_time,
                 "running_losses": running_losses
