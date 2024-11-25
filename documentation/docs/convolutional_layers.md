@@ -83,7 +83,6 @@ Quando é feita a normalização em mini-lotes (*mini-batches*), isto é, quando
     # ... código abaixo
     ```
 
-
 ## **Referências**
 
 1. [What are convolutional neural networks?](https://www.ibm.com/topics/convolutional-neural-networks)

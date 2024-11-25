@@ -81,7 +81,7 @@ nav:
   - Introdução: index.md
   - Contexto: context.md
   - Inputs e Outputs: inputs_outputs.md
-  - Autoencoder + CNN: autoencoder_CNN.md
+  - Model type: model_type.md
   - Camada de convolução (Encoder): convolutional_layers.md
   - Camada de convolução transposta (Encoder): transposed_convolutional_layers.md
   - Camadas de embedding: embedding_layers.md
