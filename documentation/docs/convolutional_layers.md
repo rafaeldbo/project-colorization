@@ -61,7 +61,6 @@ A convolução transposta funciona de forma que, quando temos uma entrada de dim
 Dessa forma, conseguimos recuperar a imagem aumentando sua resolução a cada iteração. Considerando que existem $n$ camadas convolucionais, serão feitas $n$ camadas convolucionais transpostas para recuperar a imagem anteriormente reduzida para treinamento, sendo que na última iteração, obtemos os dois canais de cor desejados, *A* e *B*, que junto à camada *L* inicial, compõem a imagem.
 
 
-
 ## **Referências**
 
 1. [What are convolutional neural networks?](https://www.ibm.com/topics/convolutional-neural-networks)
