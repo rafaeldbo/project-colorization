@@ -1,4 +1,4 @@
-site_name: TCNN - Tagged Colorization Neural Network
+site_name: ECNN - Embedding Convolutional Neural Network
 theme:
   name: material
   palette:
@@ -74,3 +74,20 @@ plugins:
         - ">"
 nav: 
   - Introdução: index.md
+  - Contexto: context.md
+  - Inputs e Outputs: inputs_outputs.md
+  - Autoencoder + CNN: autoencoder_CNN.md
+  - Convolutional Layers (Encoder): covolutional_layers.md
+  - Transposed Convolutional Layers (Encoder): transposed_covolutional_layers.md
+  - Embedding Layers: embedding_layers.md
+  - Batch Normalizer: batch_normalizer.md
+  - Dillatation Layers: dillatation_layers.md
+  - Activation Function: activation_function.md
+  - U-Net Layout: unet.md
+  - Loss Function: loss_function.md
+  - Optimizer: optimizer.md
+  - Gradient Descent: gradient_descent.md
+  - Forward e Backward: forward_backward.md
+  - Batches e Epochs: batches_epochs.md
+  - Multiprocessing: multiprocessing.md
+  - Teste: test.md

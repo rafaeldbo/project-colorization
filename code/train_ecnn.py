@@ -1,9 +1,9 @@
 import traceback
 from os import path
 
-from tcnn.training import train_model
-from tcnn.testing import test_model
-from tcnn.network import NetworkBasic, NetworkAdvanced
+from ecnn.training import train_model
+from ecnn.testing import test_model
+from ecnn.network import NetworkBasic, NetworkAdvanced
 
 def main():
     # Get the directory of the current file

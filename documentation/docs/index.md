@@ -1,4 +1,4 @@
-# TCNN - Tagged Colorization Neural Network
+# ECNN - Embedding Convolutional Neural Network
 
 Esse é o código base de um modelo de colorização de imagens classificadas. 
 
