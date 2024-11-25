@@ -12,40 +12,43 @@ Durante uma convolução, existem alguns parâmetros que podemos alterar para qu
 
 As camadas de convolução são utilizadas para transformar uma entrada em valores numéricos, que serão interpretados durante o processo de treinamento da rede neural.
 
-Esse conceito pode ser aplicado em Python, como demonstrado abaixo:
+??? example "Exemplo: Convolução"
+    Esse conceito pode ser aplicado em Python, como demonstrado abaixo:
 
-=== "Sem dilatação"
+    === "Sem dilatação"
 
-    ```python
-    # ... código acima
-    # inicialização
+        ```python
+        from torch import nn
 
-    # Encoder
-    self.conv1 = nn.Conv2d(
-        1 + self.emb_size, 32, kernel_size=4, stride=2, padding=1
-    )
-    # ... 
+        # ... código acima
+        # inicialização
 
-    # ... código abaixo
-    ```
+        # Encoder
+        self.conv1 = nn.Conv2d(
+            1 + self.emb_size, 32, kernel_size=4, stride=2, padding=1
+        )
+        # ... 
 
-=== "Com dilatação"
+        # ... código abaixo
+        ```
 
-    ```python 
-    from torch import nn
+    === "Com dilatação"
 
-    # inicialização
+        ```python 
+        from torch import nn
 
-    # Encoder
-    self.conv1 = nn.Conv2d(1 + self.emb_size, 32, kernel_size=4, stride=2, padding=1)
-    # até n camadas
+        # inicialização
 
-    # Dilation
-    self.dilat1 = nn.Conv2d(256, 256, kernel_size=4, stride=1, padding=3, dilation=2)
-    # até n camadas 
+        # Encoder
+        self.conv1 = nn.Conv2d(1 + self.emb_size, 32, kernel_size=4, stride=2, padding=1)
+        # até n camadas
 
-    # ... código abaixo
-    ```
+        # Dilation
+        self.dilat1 = nn.Conv2d(256, 256, kernel_size=4, stride=1, padding=3, dilation=2)
+        # até n camadas 
+
+        # ... código abaixo
+        ```
 
 !!! info "Embedding por categorias"
     Em relação à primeira camada de convolução, para ambas as situações mostradas anteriormente, explicaremos com mais detalhes em outra seção sobre a categorização das imagens.
@@ -60,6 +63,25 @@ A convolução transposta funciona de forma que, quando temos uma entrada de dim
 
 Dessa forma, conseguimos recuperar a imagem aumentando sua resolução a cada iteração. Considerando que existem $n$ camadas convolucionais, serão feitas $n$ camadas convolucionais transpostas para recuperar a imagem anteriormente reduzida para treinamento, sendo que na última iteração, obtemos os dois canais de cor desejados, *A* e *B*, que junto à camada *L* inicial, compõem a imagem.
 
+## **Batch normalization**
+
+A normalização em lotes (*batch normalization*) surgiu com o propósito de remediar o problema de mudança de covariável interna (em inglês, *internal covariant shift problem*). Esse problema é causado pela variação da distribuição dos parâmetros das entradas, que pode dificultar na convergência do modelo, uma vez que torna o processo de treinamento mais lento do que deveria ser.
+
+Quando é feita a normalização em mini-lotes (*mini-batches*), isto é, quando a média é ajustada para 0 e a variância para 1, são utilizados dois novos parâmetros, o deslocamento e a escala, que servem para otimizar a normalização para as ativações. Dessa forma, o processo de aprendizado da rede neural é estabilizado, reduzindo a mudança de covariável interna, garantindo consistência entre as camadas do modelo.
+
+??? example "Exemplo: Batch Normalization"
+    Um exemplo de uso dessa ferramenta, em Python, é mostrado abaixo:
+
+    ```py
+    from torch import nn
+
+    # ... código acima
+
+    # entre os outputs das camadas
+    self.conv2 = nn.Conv2d(32, 64, kernel_size=4, stride=2, padding=1)
+
+    # ... código abaixo
+    ```
 
 
 ## **Referências**
@@ -67,3 +89,5 @@ Dessa forma, conseguimos recuperar a imagem aumentando sua resolução a cada it
 1. [What are convolutional neural networks?](https://www.ibm.com/topics/convolutional-neural-networks)
 2. [Dilated Convolution](https://www.geeksforgeeks.org/dilated-convolution/)
 3. [14.10. Transposed Convolution - Basic Operation](https://d2l.ai/chapter_computer-vision/transposed-conv.html)
+4. [What is Batch Normalization In Deep Learning?](https://www.geeksforgeeks.org/what-is-batch-normalization-in-deep-learning/)
+5. [Internal Covariant Shift Problem in Deep Learning](https://www.geeksforgeeks.org/internal-covariant-shift-problem-in-deep-learning/)
