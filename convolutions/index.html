@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../model_type/">
       
-        <link rel="next" href="context/">
+      
+        <link rel="next" href="../batnorm_actfunc/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
     
     
       
-        <title>ECNN - Embedded Convolutional Neural Network</title>
+        <title>Tipos de Convoluções - ECNN - Embedded Convolutional Neural Network</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -85,18 +87,18 @@
       
     
     
-      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../assets/_markdown_exec_pyodide.css">
     
-      <link rel="stylesheet" href="termynal.css">
+      <link rel="stylesheet" href="../termynal.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -105,7 +107,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -124,7 +126,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ecnn-embedded-convolutional-neural-network" class="md-skip">
+        <a href="#tipos-de-convolucoes" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +142,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ECNN - Embedded Convolutional Neural Network" class="md-header__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
+    <a href=".." title="ECNN - Embedded Convolutional Neural Network" class="md-header__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -160,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introdução
+              Tipos de Convoluções
             
           </span>
         </div>
@@ -261,7 +263,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ECNN - Embedded Convolutional Neural Network" class="md-nav__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
+    <a href=".." title="ECNN - Embedded Convolutional Neural Network" class="md-nav__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -271,6 +273,86 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contexto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs_outputs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entradas e Saídas do Modelo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model_type/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipo do Modelo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
     
       
       
@@ -292,18 +374,18 @@
           
   
   <span class="md-ellipsis">
-    Introdução
+    Tipos de Convoluções
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Introdução
+    Tipos de Convoluções
   </span>
   
 
@@ -325,44 +407,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creditos" class="md-nav__link">
+  <a href="#camada-de-convolucao" class="md-nav__link">
     <span class="md-ellipsis">
-      Créditos
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Créditos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desenvolvedores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desenvolvedores
+      Camada de Convolução
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#orientacao" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#camada-de-convolucao-transposta" class="md-nav__link">
     <span class="md-ellipsis">
-      Orientação
+      Camada de Convolução Transposta
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#referencias" class="md-nav__link">
     <span class="md-ellipsis">
       Referências
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -381,87 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="context/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Contexto
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="inputs_outputs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Entradas e Saídas do Modelo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="model_type/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tipo do Modelo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="convolutions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tipos de Convoluções
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="batnorm_actfunc/" class="md-nav__link">
+      <a href="../batnorm_actfunc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="embeddings/" class="md-nav__link">
+      <a href="../embeddings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="unet/" class="md-nav__link">
+      <a href="../unet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="loss_function/" class="md-nav__link">
+      <a href="../loss_function/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="optimizer/" class="md-nav__link">
+      <a href="../optimizer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backpropagation/" class="md-nav__link">
+      <a href="../backpropagation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -581,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="batches_epochs/" class="md-nav__link">
+      <a href="../batches_epochs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="multiprocessing/" class="md-nav__link">
+      <a href="../multiprocessing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="test/" class="md-nav__link">
+      <a href="../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,44 +648,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creditos" class="md-nav__link">
+  <a href="#camada-de-convolucao" class="md-nav__link">
     <span class="md-ellipsis">
-      Créditos
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Créditos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desenvolvedores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desenvolvedores
+      Camada de Convolução
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#orientacao" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#camada-de-convolucao-transposta" class="md-nav__link">
     <span class="md-ellipsis">
-      Orientação
+      Camada de Convolução Transposta
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#referencias" class="md-nav__link">
     <span class="md-ellipsis">
       Referências
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -717,29 +689,63 @@
                   
 
 
-<h1 id="ecnn-embedded-convolutional-neural-network">ECNN - Embedded Convolutional Neural Network</h1>
-<p>Essa é a parte teórica do Tutorial de construção de um modelo de colorização de imagens classificadas. Esse modelo deverá receber uma imagem em preto e branco (escala de cinza) e, utilizando o <code>tema da imagem</code>, tentará colorir essa imagem.</p>
-<p>A parte prática desse tutorial está disponível <a href="">neste notebook</a>.</p>
-<p>Os códigos presentes no tutorial foram feita utilizando a biblioteca <a href="https://github.com/pytorch/pytorch">PyTorch</a>. O treinamento poderá ser feito utilizando o conjunto de treinamento do dataset <a href="https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset">Image Colorization Dataset</a> e a classificação manual dessas imagens feita por nós, disponivel em: <a href="https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/EeRQzARO6MVGhUKujV0i_WMBwYfJvLsDrpNNzvF-rBG-KA?e=WDF7Ng">Categories</a>.</p>
-<p>As seguintes categorias foram usadas na classificação das imagens: <code>pessoas</code>, <code>alimentos</code>, <code>animais</code>, <code>veiculos</code>, <code>ambientes externos</code>, <code>ambientes internos</code> e <code>objetos</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Alerta</p>
-<p>É extremamente recomendado que a construção final do código presente no <strong>Notebbok</strong> só seja feita após a leitura completa desta parte teórica.</p>
+<h1 id="tipos-de-convolucoes"><strong>Tipos de Convoluções</strong></h1>
+<hr />
+<h2 id="camada-de-convolucao"><strong>Camada de Convolução</strong></h2>
+<p>Convoluções são processos em que um <em>kernel</em> (uma matriz de tamanho <span class="arithmatex">\(n \times m\)</span>) percorre os campos receptivos de uma imagem, gerando um output com altura e largura menores que a imagem original.</p>
+<p>Durante uma convolução, existem alguns parâmetros que podemos alterar para que alcancemos o resultado que desejamos e que usamos em nosso modelo, sendo eles:</p>
+<ol>
+<li>
+<p><strong><em>Padding</em></strong>: parâmetro que cria uma espécie de "moldura" de zeros que é colocada em volta da entrada. Existem 3 tipos de padding: válido, igual ou completo. Utilizamos em nosso modelo o padding completo, de tamanho 1.</p>
+</li>
+<li>
+<p><strong><em>Stride</em></strong>: é o passo no qual o <em>kernel</em> percorrerá a imagem. Quanto maior o valor do passo, menor será o output. Por exemplo, no nosso modelo, utilizamos um passo de 2, para que o output seja menor que a imagem original. Nesse tutorial, quando quisermos alterar o tamanho da imagem usaremos <code>stride=2</code>, assim diminuindo as dimensões da imagem pela metade ou dobrando-as.</p>
+</li>
+<li>
+<p><strong><em>Dilation</em></strong>: processo que faz com que o campo receptivo seja aumentado inserindo espaçamentos entre os <em>pixels</em> do <em>kernel</em>. Assim, da mesma maneira que um <em>kernel</em> de 5x5 com dilatação 1 possui 25 pesos, um <em>kernel</em> de 3x3 com dilatação 2 possui 9 pesos, ou seja, diminuímos a quantidade de parâmetros e garantimos que seja capturada a mesma quantidade de informação.</p>
+</li>
+</ol>
+<p>As camadas de convolução são utilizadas para transformar uma entrada em valores numéricos, que serão interpretados durante o processo de treinamento da rede neural.</p>
+<div class="admonition example">
+<p class="admonition-title">Código: Convoluções</p>
+<p>Esse conceito pode ser aplicado em Python, como demonstrado abaixo:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Sem Dilatação</label><label for="__tabbed_1_2">Com Dilatação</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>No código, para declarar uma camada de <strong>convolução</strong> é necessário especificar, nessa ordem, a quantidade de layers de entrada, quantidade de layers de saída, tamanho do kernel, tamanho do passo (<em>stride</em>) (padrão=1) e tamanho da moldura (<em>padding</em>) (padrão=0). Nos modelos construidos nesse tutorial utilizaremos <code>kernel_size=4</code> e <code>padding=1</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
 </div>
-<h2 id="creditos"><strong>Créditos</strong></h2>
-<h3 id="desenvolvedores"><strong>Desenvolvedores</strong></h3>
-<ul>
-<li>Beatriz Rodrigues de Freitas</li>
-<li>Carlos Eduardo Porciuncula Yamada</li>
-<li>Rafael Dourado Bastos de Oliveira</li>
-</ul>
-<h3 id="orientacao"><strong>Orientação</strong></h3>
-<ul>
-<li>Fábio José Ayres</li>
-</ul>
-<h3 id="referencias"><strong>Referências</strong></h3>
-<p>1) <a href="https://medium.com/@geokam/building-an-image-colorization-neural-network-part-4-implementation-7e8bb74616c">Building an Image Colorization Neural Network</a></p>
-<p>2) <a href="https://github.com/gkamtzir/cnn-image-colorization">CNN-Image-Colorization</a></p>
+<div class="tabbed-block">
+<p>Já para declarar uma camada de <strong>dilatação</strong> é necessário especificar, além dos parâmetros da convolução normal: a quantidade de pesos de dilatação (padrão=1). Nos modelos construídos nesse tutorial utilizaremos <code>dilation=2</code> com <code>padding=3</code>.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">dilat</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="camada-de-convolucao-transposta"><strong>Camada de Convolução Transposta</strong></h2>
+<p>Uma vez que reduzimos as dimensões espaciais da nossa amostra através de convoluções, precisamos de uma ferramenta para voltar ao estado inicial da imagem, que é o objetivo de nossa modelagem.</p>
+<p>A convolução transposta funciona de forma que, quando temos uma entrada de dimensões <span class="arithmatex">\(n_h \times n_w\)</span> e um <em>kernel</em> de dimensões <span class="arithmatex">\(k_h \times k_w\)</span>, utilizando um passo de 1 (<code>stride = 1</code>), o <em>kernel</em> percorrerá um total de <span class="arithmatex">\(n_h n_w\)</span> vezes, produzindo esse mesmo valor de resultados intermediários, sendo que cada um possui dimensões de <span class="arithmatex">\((n_h + k_h - 1) \times (n_w + k_w - 1)\)</span>.</p>
+<p><a class="glightbox" href="../img/trans_conv.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Transposed Convolution" src="../img/trans_conv.png" /></a></p>
+<p>Dessa forma, conseguimos recuperar a imagem aumentando sua resolução a cada iteração. Considerando que existem <span class="arithmatex">\(n\)</span> camadas convolucionais, serão feitas <span class="arithmatex">\(n\)</span> camadas convolucionais transpostas para recuperar a imagem anteriormente reduzida para treinamento, sendo que na última iteração, obtemos os dois canais de cor desejados, <em>A</em> e <em>B</em>, que junto à camada <em>L</em> inicial, compõem a imagem.</p>
+<p>Sua sintaxe no código é muito parecida coma a da camada de <strong>convolução</strong>, possuindo os mesmos parâmetros:
+<div class="language-python highlight"><span class="filename">Código: Convolução transposta</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">tconv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="referencias"><strong>Referências</strong></h2>
+<ol>
+<li><a href="https://www.ibm.com/topics/convolutional-neural-networks">What are convolutional neural networks?</a></li>
+<li><a href="https://www.geeksforgeeks.org/dilated-convolution/">Dilated Convolution</a></li>
+<li><a href="https://d2l.ai/chapter_computer-vision/transposed-conv.html">Transposed Convolution - Basic Operation</a></li>
+</ol>
 
 
 
@@ -788,18 +794,18 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="assets/_markdown_exec_pyodide.js"></script>
+        <script src="../assets/_markdown_exec_pyodide.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="termynal.js"></script>
+        <script src="../termynal.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

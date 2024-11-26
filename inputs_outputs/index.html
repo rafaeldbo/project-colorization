@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../context/">
       
-        <link rel="next" href="context/">
+      
+        <link rel="next" href="../model_type/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
     
     
       
-        <title>ECNN - Embedded Convolutional Neural Network</title>
+        <title>Entradas e Saídas do Modelo - ECNN - Embedded Convolutional Neural Network</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -85,18 +87,18 @@
       
     
     
-      <link rel="stylesheet" href="assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../assets/_markdown_exec_pyodide.css">
     
-      <link rel="stylesheet" href="termynal.css">
+      <link rel="stylesheet" href="../termynal.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -105,7 +107,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -124,7 +126,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ecnn-embedded-convolutional-neural-network" class="md-skip">
+        <a href="#entradas-e-saidas-do-modelo" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +142,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ECNN - Embedded Convolutional Neural Network" class="md-header__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
+    <a href=".." title="ECNN - Embedded Convolutional Neural Network" class="md-header__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -160,7 +162,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introdução
+              Entradas e Saídas do Modelo
             
           </span>
         </div>
@@ -261,7 +263,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ECNN - Embedded Convolutional Neural Network" class="md-nav__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
+    <a href=".." title="ECNN - Embedded Convolutional Neural Network" class="md-nav__button md-logo" aria-label="ECNN - Embedded Convolutional Neural Network" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -271,6 +273,46 @@
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contexto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
     
       
       
@@ -292,18 +334,18 @@
           
   
   <span class="md-ellipsis">
-    Introdução
+    Entradas e Saídas do Modelo
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Introdução
+    Entradas e Saídas do Modelo
   </span>
   
 
@@ -325,44 +367,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creditos" class="md-nav__link">
+  <a href="#entradas-do-modelo" class="md-nav__link">
     <span class="md-ellipsis">
-      Créditos
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Créditos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desenvolvedores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desenvolvedores
+      Entradas do Modelo
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#orientacao" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#saida-do-modelo" class="md-nav__link">
     <span class="md-ellipsis">
-      Orientação
+      Saída do Modelo
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#referencias" class="md-nav__link">
     <span class="md-ellipsis">
       Referências
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -381,47 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="context/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Contexto
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="inputs_outputs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Entradas e Saídas do Modelo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="model_type/" class="md-nav__link">
+      <a href="../model_type/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -441,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="convolutions/" class="md-nav__link">
+      <a href="../convolutions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -461,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="batnorm_actfunc/" class="md-nav__link">
+      <a href="../batnorm_actfunc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="embeddings/" class="md-nav__link">
+      <a href="../embeddings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="unet/" class="md-nav__link">
+      <a href="../unet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="loss_function/" class="md-nav__link">
+      <a href="../loss_function/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="optimizer/" class="md-nav__link">
+      <a href="../optimizer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -561,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="backpropagation/" class="md-nav__link">
+      <a href="../backpropagation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -581,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="batches_epochs/" class="md-nav__link">
+      <a href="../batches_epochs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -601,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="multiprocessing/" class="md-nav__link">
+      <a href="../multiprocessing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="test/" class="md-nav__link">
+      <a href="../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -661,44 +648,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creditos" class="md-nav__link">
+  <a href="#entradas-do-modelo" class="md-nav__link">
     <span class="md-ellipsis">
-      Créditos
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Créditos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desenvolvedores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Desenvolvedores
+      Entradas do Modelo
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#orientacao" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#saida-do-modelo" class="md-nav__link">
     <span class="md-ellipsis">
-      Orientação
+      Saída do Modelo
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#referencias" class="md-nav__link">
     <span class="md-ellipsis">
       Referências
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -717,29 +689,93 @@
                   
 
 
-<h1 id="ecnn-embedded-convolutional-neural-network">ECNN - Embedded Convolutional Neural Network</h1>
-<p>Essa é a parte teórica do Tutorial de construção de um modelo de colorização de imagens classificadas. Esse modelo deverá receber uma imagem em preto e branco (escala de cinza) e, utilizando o <code>tema da imagem</code>, tentará colorir essa imagem.</p>
-<p>A parte prática desse tutorial está disponível <a href="">neste notebook</a>.</p>
-<p>Os códigos presentes no tutorial foram feita utilizando a biblioteca <a href="https://github.com/pytorch/pytorch">PyTorch</a>. O treinamento poderá ser feito utilizando o conjunto de treinamento do dataset <a href="https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset">Image Colorization Dataset</a> e a classificação manual dessas imagens feita por nós, disponivel em: <a href="https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/EeRQzARO6MVGhUKujV0i_WMBwYfJvLsDrpNNzvF-rBG-KA?e=WDF7Ng">Categories</a>.</p>
-<p>As seguintes categorias foram usadas na classificação das imagens: <code>pessoas</code>, <code>alimentos</code>, <code>animais</code>, <code>veiculos</code>, <code>ambientes externos</code>, <code>ambientes internos</code> e <code>objetos</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Alerta</p>
-<p>É extremamente recomendado que a construção final do código presente no <strong>Notebbok</strong> só seja feita após a leitura completa desta parte teórica.</p>
-</div>
-<h2 id="creditos"><strong>Créditos</strong></h2>
-<h3 id="desenvolvedores"><strong>Desenvolvedores</strong></h3>
-<ul>
-<li>Beatriz Rodrigues de Freitas</li>
-<li>Carlos Eduardo Porciuncula Yamada</li>
-<li>Rafael Dourado Bastos de Oliveira</li>
-</ul>
-<h3 id="orientacao"><strong>Orientação</strong></h3>
-<ul>
-<li>Fábio José Ayres</li>
-</ul>
-<h3 id="referencias"><strong>Referências</strong></h3>
-<p>1) <a href="https://medium.com/@geokam/building-an-image-colorization-neural-network-part-4-implementation-7e8bb74616c">Building an Image Colorization Neural Network</a></p>
-<p>2) <a href="https://github.com/gkamtzir/cnn-image-colorization">CNN-Image-Colorization</a></p>
+<h1 id="entradas-e-saidas-do-modelo"><strong>Entradas e Saídas do Modelo</strong></h1>
+<p>Queremos treinar um modelo capaz de transformar imagens em preto e branco (escala de cinza) em imagens coloridas. Dessa forma, mesmo ele sendo generativo é mais correto afirmar que nosso modelo realizará uma melhoria na imagem, ou invés de criar uma totalmente nova.</p>
+<h2 id="entradas-do-modelo"><strong>Entradas do Modelo</strong></h2>
+<p>A imagens são conjuntos de dados constituídos de 3 dimensões: Altura, Largura e uma terceira dimensão que consiste nas camadas que formam a cor da imagem. Formatos comuns, como <code>PNG</code> ou <code>JPG</code>, possuem essa dimensão de cor no sistema <code>RGB</code>, que divide essa dimensão em três camadas: <strong>R</strong>ed <strong>G</strong>reen <strong>B</strong>lue. Mesmo imagens em preto e branco, quando nesses formatos, possuem essas três camadas, porém elas poderiam ser representadas por apenas uma.</p>
+<p>Uma outra forma de representar camadas de cor é o sistema <code>LAB</code> que consiste em uma camada de <strong>L</strong>uminosidade e duas camadas de cor: camada <strong>A</strong>, que representa o equilíbrio entre o Vermelho e o Verde, e a camada <strong>B</strong> que representa o equilíbrio entre o Amarelo e o Azul. Utilizando esse sistema, é possível transformar imagens coloridas em imagens em preto e branco com uma única camada, para isso é necessário converter do sistema <code>RGB</code> para o <code>LAB</code> e remover suas duas camadas de cor, a <strong>A</strong> e a <strong>B</strong>.</p>
+<div class="language-python highlight"><span class="filename">Trantando a Imagem de Entrada</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s2">&quot;./exemplo.jpg&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># lê uma imagem criando um tensor no formato (Cor, Largura, Altura)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">img</span> <span class="o">=</span> <span class="n">read_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span> 
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># reorganiza as dimensões para imagem para o formato padrão </span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># (Largura, Altura, Cor) </span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># converte do sistema RGB para o LAB </span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">LAB_img</span> <span class="o">=</span> <span class="n">from_numpy</span><span class="p">(</span><span class="n">rgb2lab</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> 
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># reorganiza as dimensões para imagem para o formato do pytorch </span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">LAB_img</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># (Cor, Largura, Altura)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># separa apenas a camada L</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">gray_layer</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># separa as camadas A e B</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">color_layers</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:,</span> <span class="p">:]</span> 
+</span></code></pre></div>
+<p>Como nosso objetivo final é construir um modelo capaz de colorir imagens em preto e branco previamente categoriazadas, a outra entrada do modelo deverá ser a categoria na qual a imagem se encaixa. Essa categoria deverá ser um número inteiro que represente unicamente aquela categoria.</p>
+<p>Nas categorias que usaremos, temos:</p>
+<ol>
+<li>Comida </li>
+<li>Animal</li>
+<li>Pessoa</li>
+<li>Objeto</li>
+<li>Veículo</li>
+<li>Ambiente interno</li>
+<li>Ambiente externo</li>
+</ol>
+<h2 id="saida-do-modelo"><strong>Saída do Modelo</strong></h2>
+<p>Após o processamento do modelo, ele nos devolverá duas novas camadas criadas a partir da camada <strong>L</strong>. Utilizaremos essas camadas como se fossem as camadas <strong>A</strong> e <strong>B</strong> faltantes junto a camada <strong>L</strong> original para formar a imagem colorida.</p>
+<p>Uma imagem <code>LAB</code> não é muito utilizada, por isso devemos transformar a imagem de volta em <code>RGB</code> antes de utiliza-la. Para isso basta seguir o processo inverso de se obter a imagem LAB:</p>
+<div class="language-python highlight"><span class="filename">Trantando a Saída do Modelo</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">### Código omitido acima</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">pred_color_layers</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">gray_layer</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># concatena a camada L com as camadas AB</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">pred_LAB_img</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">gray_layer</span><span class="p">,</span> <span class="n">pred_color_layers</span><span class="p">))</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># reorganiza as dimensões para imagem para o formato padrão </span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">pred_LAB_img</span> <span class="o">=</span> <span class="n">pred_LAB_img</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># (Largura, Altura, Cor) </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># converte do sistema LAB para o RGB </span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">pred_RGB_img</span> <span class="o">=</span> <span class="n">lab2rgb</span><span class="p">(</span><span class="n">pred_LAB_img</span><span class="p">)</span>
+</span></code></pre></div>
+<details class="- example">
+<summary>Código completo</summary>
+<div class="language-python highlight"><span class="filename">Código completo</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">from_numpy</span><span class="p">,</span> <span class="n">cat</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">torchvision.io</span> <span class="kn">import</span> <span class="n">read_image</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span> <span class="nn">skimage.color</span> <span class="kn">import</span> <span class="n">rgb2lab</span><span class="p">,</span> <span class="n">lab2rgb</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">img_path</span> <span class="o">=</span> <span class="s2">&quot;./exemplo.jpg&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># converte a imagem de RGB para LAB</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">img</span> <span class="o">=</span> <span class="n">read_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span> 
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">LAB_img</span> <span class="o">=</span> <span class="n">from_numpy</span><span class="p">(</span><span class="n">rgb2lab</span><span class="p">(</span><span class="n">img</span><span class="p">))</span> 
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">LAB_img</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># separa os layers</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">gray_layer</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">color_layers</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:,</span> <span class="p">:]</span> 
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1"># aplica o modelo de colorização</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">pred_color_layers</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">gray_layer</span><span class="p">)</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c1"># reune os layers</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">pred_LAB_img</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">gray_layer</span><span class="p">,</span> <span class="n">pred_color_layers</span><span class="p">))</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="c1"># converte a imagem de LAB para RGB</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="n">pred_LAB_img</span> <span class="o">=</span> <span class="n">pred_LAB_img</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> 
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="n">pred_RGB_img</span> <span class="o">=</span> <span class="n">lab2rgb</span><span class="p">(</span><span class="n">pred_LAB_img</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<hr />
+<h2 id="referencias"><strong>Referências</strong></h2>
+<ol>
+<li><a href="https://medium.com/@geokam/building-an-image-colorization-neural-network-part-1-generative-models-and-autoencoders-d68f5769d484">Generative Models and Autoencoders</a></li>
+</ol>
 
 
 
@@ -788,18 +824,18 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "content.tooltips", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.tracking"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="assets/_markdown_exec_pyodide.js"></script>
+        <script src="../assets/_markdown_exec_pyodide.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="termynal.js"></script>
+        <script src="../termynal.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
