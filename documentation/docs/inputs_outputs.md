@@ -1,8 +1,8 @@
-# **Inputs e Outputs**
+# **Entradas e Saídas do Modelo**
 
 Queremos treinar um modelo capaz de transformar imagens em preto e branco (escala de cinza) em imagens coloridas. Dessa forma, mesmo ele sendo generativo é mais correto afirmar que nosso modelo realizará uma melhoria na imagem, ou invés de criar uma totalmente nova.
 
-## **Input**
+## **Entradas do Modelo**
 
 A imagens são conjuntos de dados constituídos de 3 dimensões: Altura, Largura e uma terceira dimensão que consiste nas camadas que formam a cor da imagem. Formatos comuns, como `PNG` ou `JPG`, possuem essa dimensão de cor no sistema `RGB`, que divide essa dimensão em três camadas: **R**ed **G**reen **B**lue. Mesmo imagens em preto e branco, quando nesses formatos, possuem essas três camadas, porém elas poderiam ser representadas por apenas uma.
 
@@ -30,7 +30,19 @@ gray_layer = LAB_img[0, :, :].unsqueeze(0)
 color_layers = LAB_img[1:, :, :] 
 ```
 
-## **Output**
+Como nosso objetivo final é construir um modelo capaz de colorir imagens em preto e branco previamente categoriazadas, a outra entrada do modelo deverá ser a categoria na qual a imagem se encaixa. Essa categoria deverá ser um número inteiro que represente unicamente aquela categoria.
+
+Nas categorias que usaremos, temos:
+
+1. Comida 
+2. Animal
+3. Pessoa
+4. Objeto
+5. Veículo
+6. Ambiente interno
+7. Ambiente externo
+
+## **Saída do Modelo**
 
 Após o processamento do modelo, ele nos devolverá duas novas camadas criadas a partir da camada **L**. Utilizaremos essas camadas como se fossem as camadas **A** e **B** faltantes junto a camada **L** original para formar a imagem colorida.
 
@@ -50,7 +62,7 @@ pred_LAB_img = pred_LAB_img.permute(1, 2, 0) # (Largura, Altura, Cor)
 # converte do sistema LAB para o RGB 
 pred_RGB_img = lab2rgb(pred_LAB_img)
 ```
-???- info "Código completo"
+???- example "Código completo"
     ``` python title="Código completo"
     from torch import from_numpy, cat
     from torchvision.io import read_image
@@ -79,3 +91,8 @@ pred_RGB_img = lab2rgb(pred_LAB_img)
     pred_LAB_img = pred_LAB_img.permute(1, 2, 0) 
     pred_RGB_img = lab2rgb(pred_LAB_img)
     ```
+
+___
+## **Referências**
+
+1. [Generative Models and Autoencoders](https://medium.com/@geokam/building-an-image-colorization-neural-network-part-1-generative-models-and-autoencoders-d68f5769d484)

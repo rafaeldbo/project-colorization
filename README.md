@@ -8,6 +8,10 @@ A implementação foi feita utilizando o [PyTorch](https://github.com/pytorch/py
 
 As seguintes categorias foram usadas na classificação das imagens: `pessoas`, `alimentos`, `animais`, `veiculos`, `ambientes externos`, `ambientes internos` e `objetos`.
 
+## Tutorial
+
+Um tutorial foi criado para te guiar na contrução desse modelo. A parte teórica desse tutorial está diponível [nesse link](https://rafaeldbo.github.io/project-colorization/), já a parte prática está disponível [nesse notebook](). 
+
 ## Requisitos
 
 Para instalar as bibliotecas python necessárias, utilize o comando (preferencialmente, em um ambiente virtual `venv`):
@@ -20,7 +24,7 @@ Além disso, para treinar o modelo, também é necessário colocar os conjuntos 
 
 ## Resultados
 
-![Exemplo do conjunto de teste](./code/output/output_tcnn_advanced_5000_0.png)
+![Exemplo do conjunto de teste](./code/output/output_ecnn_advanced_5000_0.png)
 
 ### Desenvolvedores
 

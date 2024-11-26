@@ -81,19 +81,15 @@ extra_javascript:
 nav: 
   - Introdução: index.md
   - Contexto: context.md
-  - Inputs e Outputs: inputs_outputs.md
-  - Model type: model_type.md
-  - Camada de convolução (Encoder): convolutional_layers.md
-  - Camada de convolução transposta (Encoder): transposed_convolutional_layers.md
-  - Camadas de embedding: embedding_layers.md
-  - Normalização em batches: batch_normalizer.md
-  - Dilatação: dilation_layers.md
-  - Função de ativação: activation_function.md
+  - Entradas e Saídas do Modelo: inputs_outputs.md
+  - Tipo do Modelo: model_type.md
+  - Tipos de Convoluções: convolutions.md
+  - Normalização em Batches e Funções de Ativação: batnorm_actfunc.md
+  - Camada de Embeddings: embeddings.md
   - Layout U-Net: unet.md
   - Função de perda: loss_function.md
   - Otimizador: optimizer.md
-  - Gradient Descendente: gradient_descent.md
-  - Forward e Back-propagation: forward_backward.md
+  - Back-propagation: backpropagation.md
   - Batches e Epochs: batches_epochs.md
   - Multiprocessamento: multiprocessing.md
   - Teste: test.md

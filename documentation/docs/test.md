@@ -13,4 +13,4 @@ params = {
 
 Os resultados do teste são mostrados pela imagem a seguir:
 
-![Resultados do teste](./img/output_tcnn_advanced_5000_0.png)
+![Resultados do teste](./img/output_ecnn_advanced_5000_0.png)

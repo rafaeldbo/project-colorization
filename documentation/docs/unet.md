@@ -18,7 +18,7 @@ Antes de construirmos nosso primeiro modelo utilizando os conhecimentos obtidos 
 
 ``Forwarding`, `Forward Pass` ou `Propagação Direta` é o processo pelo qual uma rede neural processa uma entrada e produz uma saída. Nele uma entrada passa sequencialmente por cada camada do modelo e, ao fim de todas elas, produz um resultado final.
 
-Iremos implemeta-lo nos nossos modelos por meio da definição da função `forward` que será chamada a cada execução do modelo.
+Iremos implementá-lo nos nossos modelos por meio da definição da função `forward` que será chamada a cada execução do modelo.
 ___
 ## **Construindo um Modelo**
 
