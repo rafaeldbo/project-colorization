@@ -22,7 +22,7 @@ $β1 = 0.9$
 
 $β2 = 0.999$
 
-$ε = \frac{10}{-8}$
+$ε = {10}^{-8}$
 
 E $t$ é o número de iterações já feitas no modelo.
 ___
