@@ -63,6 +63,7 @@ markdown_extensions:
       custom_checkbox: true  
   - footnotes
   - tables
+  - pymdownx.blocks.caption
 
 plugins:
   - glightbox
