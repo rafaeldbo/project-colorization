@@ -1,16 +1,10 @@
-O modelo será testado utilizando 739 imagens diversas que foram classificadas nas categorias existentes (comida, pessoas, etc.).
+Após o treinamento do modelo, ele será testado utilizando 739 imagens diversas que foram classificadas nas categorias existentes (comida, pessoas, etc.).
 
-Foi utilizado um `batch_size` de 4 imagens e um modelo de CNN com 4 camadas de convolução, utilizando ReLU sobre um processo de *batch normalization* (*encoder*), duas camadas de convolução dilatada seguidas de 4 camadas de convolução transposta, sendo que a última possui 2 canais de cor (vide explicação **Camadas de convolução transposta**). Seus parâmetros são:
+Para isso, utilzaremos um `batch_size` de 4 amostras quando carregamos os nossos dados.
+Carregamos o modelo treinado para que ele receba as imagens da base de teste e colorize-as de acordo.
 
-```py
-params = {
-    'kernel_size' = 4,
-    'stride' = 1, 
-    'padding' = 3, 
-    'dilation' = 2
-}
-```
+Apesar da grande quantidade de imagens, não é necessária nenhuma paralelização, visto que o modelo já está treinado e será executado sobre os dados que disponibilizamos para ele.
 
-Os resultados do teste são mostrados pela imagem a seguir:
+Após finalizar a execução do teste, os resultados do teste são mostrados pela imagem a seguir, que é salva em um diretório (`outputs`):
 
 ![Resultados do teste](./img/output_ecnn_advanced_5000_0.png)
