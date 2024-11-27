@@ -7,29 +7,30 @@ from ecnn.network import NetworkBasic, NetworkAdvanced
 
 def main():
     # Get the directory of the current file
-    dir_ = path.dirname(path.abspath(__file__))
-    print(f"Current directory: {dir_}")
+    dir_path = path.dirname(path.abspath(__file__))
+    print(f"Current directory: {dir_path}")
 
     model = NetworkAdvanced
-    model_name = "tcnn_advanced_5000"
+    model_name = "ecnn_advanced_5000"
 
     # Make sure you have already downloaded the data mentioned in the README file.
     train_params = {
         'model': model,
         'model_name': model_name,
         'images_folder': "train_color",
-        'dir': dir_,
-        'amount_images': 5000,
+        'dir': dir_path,
+        'amount_images': -1, 
         'learning_rate': 0.01,
         'pin_memory': True,
         'prefetch_factor': 4,
         'num_workers': 4,
     }
     try:
+        # Training the model.
         train_model(**train_params)
 
-        # Puts to the test the final model.
-        test_model(model, model_name, "test_color", dir_)
+        # Testing the model.
+        test_model(model, model_name, "test_color", dir_path)
         
     except KeyboardInterrupt as e:
         print(e)

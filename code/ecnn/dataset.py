@@ -3,10 +3,9 @@ import pandas as pd
 from os import path, listdir
 from torch import from_numpy, Tensor
 from torch.utils.data import Dataset
-from torchvision.io import read_image, ImageReadMode
-from skimage.color import rgb2lab
 
-from .utilities import read_csv
+from skimage.color import rgb2lab
+from skimage.io import imread
 
 
 class ImageDataset(Dataset):
@@ -14,30 +13,17 @@ class ImageDataset(Dataset):
     A dataset that contains the colored images and their corresponding categories.
     """
     
-    def __init__(self, dir:str, images_folder:str, size:int=4) -> None:
-        self.data_dir = path.join(dir, 'data')
+    def __init__(self, dir_path:str, images_folder:str, size:int=-1) -> None:
+        self.data_dir = path.join(dir_path, 'data')
         self.images_path = path.join(self.data_dir, images_folder)
         
-        if size == 0:
-            raise ValueError('Size cannot be zero')
-        if size == -1:
-            self.images_files = listdir(self.images_path)
-        else:
-            self.images_files = listdir(self.images_path)[:size]
+        images = listdir(self.images_path) 
+        size = size if size > 0 else len(images)
+        self.images_files = images[:size]
         
-        self.categories = read_csv(path.join(self.data_dir, 'categories.csv'), delimiter=';')
-
-    def get_category(self, filename:str) -> int:
-        """
-        Fetches the category of the given filename.
-        
-        :param str filename: The filename of the image.
-        :return int: The category of the image.
-        """
-        category = self.categories[filename.split('.')[0]]
-        if category in ['', ' ', None]:
-            return 0
-        return category
+        df = pd.read_csv(path.join(self.data_dir, 'categories.csv'), delimiter=';')
+        df['category'] = df['category'].fillna(0)
+        self.categories = df.set_index('image')['category'].to_dict()
 
     def __len__(self) -> int:
         """
@@ -56,11 +42,11 @@ class ImageDataset(Dataset):
         filename = self.images_files[index]
 
         image_path = path.join(self.images_path, filename)
-        image = from_numpy(rgb2lab(read_image(image_path).permute(1, 2, 0))).permute(2, 0, 1)
+        LAB_image = from_numpy(rgb2lab(imread(image_path))).permute(2, 0, 1)
 
-        # The color image consists of the 'a' and 'b' parts of the LAB format.
-        color_image = image[1:, :, :]
         # The gray image consists of the `L` part of the LAB format.
-        gray_image = image[0, :, :].unsqueeze(0)
+        gray_layer = LAB_image[0, :, :].unsqueeze(0)
+        # The color image consists of the 'a' and 'b' parts of the LAB format.
+        color_layers = LAB_image[1:, :, :]
 
-        return gray_image.float(), color_image.float(), self.get_category(filename)
+        return gray_layer.float(), color_layers.float(), self.categories[filename]

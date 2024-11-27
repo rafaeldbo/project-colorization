@@ -1,5 +1,6 @@
 import time
 from os import mkdir, path
+from tqdm import tqdm 
 
 import torch
 from torch import load, nn, optim, save
@@ -31,9 +32,9 @@ def train_model(
 
     # Loading Dataset and creating the corresponding DataLoader.
     print("Loading dataset.")
-    data = ImageDataset(dir, images_folder, amount_images)
+    batch = ImageDataset(dir, images_folder, amount_images)
     dataloader = DataLoader(
-        data,
+        batch,
         batch_size=batch_size,
         shuffle=True,
         pin_memory=pin_memory,
@@ -55,7 +56,7 @@ def train_model(
 
     # choosing the device
     device_name = "cuda" if torch.cuda.is_available() and cuda else "cpu"
-    print(f"Training using [{device_name}].")
+    print(f"Training using [{device_name}]")
     device = torch.device(device_name)
 
     ecnn = model().to(device)
@@ -82,13 +83,16 @@ def train_model(
         initial_time = 0
 
     print(f"Number of parameters: {sum(p.numel() for p in ecnn.parameters())}")
+    
+    total_batches = epochs * len(dataloader)
+    progress_bar = tqdm(total=total_batches, desc="Training Progress", position=0, bar_format='{l_bar}{bar:20}{r_bar}')
 
     try:
         start = time.time()
         for epoch in range(epochs):
             epoch_running_loss = 0
-            for i, data in enumerate(dataloader):
-                gray, color, category = data
+            for i, batch in enumerate(dataloader):
+                gray, color, category = batch
 
                 gray = gray.to(device)
                 color = color.to(device)
@@ -102,13 +106,16 @@ def train_model(
                 optimizer.step()
 
                 epoch_running_loss += loss.item()
-                print(f"[{epoch+1:2d}, {i + 1:3d}] loss: {loss.item()/2000:.3f}")
-            running_losses.append(epoch_running_loss)
+                
+                # Updating the progress bar.
+                progress_bar.update(1)
+                progress_bar.set_postfix(epoch=epoch+1, batch=i+1, loss=loss.item())
+            running_losses.append(epoch_running_loss)            
 
             # Saving the model every checkpoint_period epochs.
             current_epoch = epoch + 1
             if ((current_epoch) % checkpoint_period == 0) and (current_epoch < epochs):
-                print("Saving checkpoint.")
+                print("\nSaving checkpoint...")
                 save(
                     {
                         "epoch": epoch,
@@ -119,10 +126,9 @@ def train_model(
                     },
                     f"./checkpoints/{model_name}_checkpoint.pt",
                 )
-            elipsed_time = time.time()-start
-            print(f"{round(elipsed_time//60):02d}:{round(elipsed_time%60):02d} elapsed minutes.")
 
-        print(f"Training finished.")
+        progress_bar.close()
+        print(f"Training finished!")
         # Saving the final model. 
         save(
             {
@@ -135,7 +141,8 @@ def train_model(
         )
         
     except KeyboardInterrupt:
-        print("Saving checkpoint.")
+        progress_bar.close()
+        print("\nSaving checkpoint...")
         save(
             {
                 "epoch": epoch,
@@ -145,4 +152,4 @@ def train_model(
                 "running_losses": running_losses
             }, f"./checkpoints/{model_name}_checkpoint.pt",
         )
-        raise KeyboardInterrupt("Training interrupted.")
+        raise KeyboardInterrupt("Training interrupted!")
