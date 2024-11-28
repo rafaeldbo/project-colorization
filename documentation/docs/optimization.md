@@ -128,7 +128,28 @@ $ε = {10}^{-8}$
 
 E $t$ é o número de iterações já feitas no modelo.
 
-!!! example "Código: Otimização do modelo
+!!! example "Código: Otimização do modelo"
+    Um exemplo simples da utilização do otimizador pode ser visto abaixo:
+    
+    **OBS.:** Esse código foi bastante simplificado, a implementação real é um pouco diferente.
+    ```python
+    model = ECNN() # iniciando o modelo
+    criterion = nn.MSELoss() # iniciando a função de perda
+    # iniciando o otimizador para os parêmtros do modelo e com o learning rate desejado
+    optimizer = Adam(ecnn.parameters(), lr=learning_rate) 
+
+
+    for epoch in range(epochs): # para cada epoch...
+        for i, batch in enumerate(dataloader): # para cada batch...
+            gray, color, category = batch # extraindo os dados da batch
+        
+            optimizer.zero_grad() # zerando os gradientes do otimizador
+            outputs = ecnn(gray, category) # passando os dados pelo modelo
+
+            loss = criterion(outputs, color) # calculando a perda
+            loss.backward() # derivando a perda
+            optimizer.step()
+    ```
 
 ___
 ## **Referências**
