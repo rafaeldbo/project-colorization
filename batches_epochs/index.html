@@ -745,7 +745,7 @@
 </li>
 </ol>
 <p>Em nosso modelo, por exemplo, utilizamos um <code>batch size</code> de 32 imagens, ou seja, utilizamos o algoritmo de <strong>gradiente descendente por mini-batch</strong> para aprendizagem do modelo.</p>
-<p>Os <strong>Batches</strong> são criados a partir da separação de uma base de dados em conjuntos menores de dados por meio de um <code>DataLoader</code>.Normalmente, o <code>DataLoader</code> gera os <strong>Batches</strong> de forma aleatorizada e os carrega na memória (seja ela a RAM, cache, ou da própria GPU) para que o modelo possa utiliza-los. Esse processo de carregamento é potencialmente um dos mais lentos durante o treinamento, porém ele pode ser acelerado por meio da utlização do multiprocessamento que discutiremos mais para frente.</p>
+<p>Os <strong>Batches</strong> são criados a partir da separação de uma base de dados em conjuntos menores de dados por meio de um <code>DataLoader</code>.Normalmente, o <code>DataLoader</code> gera os <strong>Batches</strong> de forma aleatorizada e os carrega na memória (seja ela a RAM, cache, ou da própria GPU) para que o modelo possa utilizá-los. Esse processo de carregamento é potencialmente um dos mais lentos durante o treinamento, porém ele pode ser acelerado por meio da utlização do multiprocessamento que discutiremos mais para frente.</p>
 <div class="admonition example">
 <p class="admonition-title">Código: DataLoader</p>
 <p>Um <code>DataLoader</code> pode ser declarado da seguinte forma:

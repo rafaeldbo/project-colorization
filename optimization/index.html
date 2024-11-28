@@ -785,7 +785,7 @@
 <hr />
 <h2 id="funcao-de-perda"><strong>Função de Perda</strong></h2>
 <p>As <strong>funções de perda</strong>, ou <em>loss functions</em>, são métricas utilizadas em Machine Learning para medir a <strong>performance</strong> de um modelo utilizando os valores que foram previstos por ele em comparação aos valores reais da base de dados.</p>
-<p>Uma função muito comumente usada em diversos modelos de previsão (e será a que utilizaremos nesse tutorial) é o <strong>Mean Squared Error</strong> (<code>MSE</code>), que é calculado pela diferença da valor obtido pela previsão e o valor real presente na base de dados. A equação dessa métrica é dada por:</p>
+<p>Uma função muito comumente usada em diversos modelos de previsão (e será a que utilizaremos nesse tutorial) é o <strong>Mean Squared Error</strong> (<code>MSE</code>), que é calculado pela diferença do valor obtido pela previsão e o valor real presente na base de dados. A equação dessa métrica é dada por:</p>
 <div class="arithmatex">\[MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat y_i)^2\]</div>
 <p>Sendo <span class="arithmatex">\(y_i\)</span> o valor real e <span class="arithmatex">\(\hat y_i\)</span> o valor previsto.</p>
 <div class="admonition example">
@@ -805,14 +805,14 @@
 <hr />
 <h2 id="gradiente-decendente"><strong>Gradiente Decendente</strong></h2>
 <p>Após calcular o erro do modelo pela <strong>função de perda</strong>, é necessário ajustar os parâmetros do modelo para <strong>minimizar</strong> esse erro. A técnica de gradiente descendente irá determinar como devem ser feitos esses ajustes utilizando o <strong>vetor gradiente</strong> da função de perda. </p>
-<p>O vetor gradiente é calculado através das derivadas parciais da função e o seu valor em cada ponto indicará a direção em que o crescimento da função é máximo (ou seja, o inverso do vetor gradiente indica a direção em que está o mínimo da função).</p>
+<p>O vetor gradiente é calculado através das derivadas parciais da função, e o seu valor em cada ponto indicará a direção em que o crescimento da função é máximo (ou seja, o inverso do vetor gradiente indica a direção em que está o mínimo da função).</p>
 <p>Com a informação obtida através do vetor gradiente, pode-se determinar quais variáveis do modelo devem ser alteradas e se elas devem aumentar ou diminuir para resultar na minimização do erro.</p>
 <p>O tamanho do passo que será dado para ajustar as variáveis do modelo é determinado pelo <code>learning rate</code>. Quanto maior o <code>learning rate</code>, maior será o passo e mais rápido o modelo irá convergir para o erro mínimo, porém, se o <code>learning rate</code> for muito grande, o modelo pode não convergir para o mínimo e oscilar em torno dele. Por outro lado, se o <code>learning rate</code> for muito pequeno, o modelo pode demorar muito para convergir para o mínimo.</p>
 <p>Para entender melhor tudo isso, vamos supor que o resultado do modelo seja dado por uma função <span class="arithmatex">\(f\)</span> de três variáveis <span class="arithmatex">\(a, b, c\)</span> e que o modelo tem um <code>learning rate</code> de <span class="arithmatex">\(α\)</span>.</p>
 <div class="arithmatex">\[f(a,b,c)\]</div>
 <p>O vetor gradiente dessa função será dado por:</p>
 <div class="arithmatex">\[(\frac{∂f}{∂a}, \frac{∂f}{∂b}, \frac{∂f}{∂c})\]</div>
-<p>Com o gradiente decendente a alteração das variáveis para chegar ao erro mínimo seria feita da seguinte forma:</p>
+<p>Com o gradiente descendente a alteração das variáveis para chegar ao erro mínimo seria feita da seguinte forma:</p>
 <div class="arithmatex">\[a_{otim} = a - α\frac{∂f}{∂a}\]</div>
 <div class="arithmatex">\[b_{otim} = b - α\frac{∂f}{∂b}\]</div>
 <div class="arithmatex">\[c_{otim} = c - α\frac{∂f}{∂c}\]</div>
