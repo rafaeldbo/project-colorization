@@ -1,22 +1,22 @@
 # **U-Net Layout**
 
-`U-Net` é um tipo especial de Rede Neural Convolucional (**CNN**) criada especificamente para o uso em imagens. Ela é composta de duas etapas, uma de Encoding e outra de **Decoding**, semelhante a estrutura do padrão do Autoencoder, porém criando um formato de **U** (por isso U-Net) e diversas **conexões atalho**. Assim como no Autoecoder, a estrutura será divididas em diferentes níveis, e a etapa de Encoding normalmente possui o mesmo número de níveis que a etapa de **Decoding**, as vezes possuindo, também, um ou mais níveis de transição.
+`U-Net` é um tipo especial de Rede Neural Convolucional (**CNN**) criada especificamente para o uso em imagens. Ela é composta de duas etapas, uma de Encoding e outra de **Decoding**, semelhante a estrutura do padrão do Autoencoder, porém criando um formato de **U** (por isso U-Net) devido a diversas **conexões atalho**. Assim como no Autoecoder, a estrutura será dividida em diferentes níveis, e a etapa de Encoding normalmente possui o mesmo número de níveis que a etapa de **Decoding**, as vezes possuindo, também, um ou mais níveis de transição.
 
 ![Exemplo de U-Net](./img/u-net.png)
 /// caption
 Referência: [Example Arquiteture of U-Net](https://commons.wikimedia.org/wiki/File:Example_architecture_of_U-Net_for_producing_k_256-by-256_image_masks_for_a_256-by-256_RGB_image.png)
 ///
 
-Na etapa de **Encoding** a imagem irá realizar uma decida passando por meio de seus níveis, em cada nível a imagem terá suas dimensões diminuídas, porém a quantidade de layers aumentada. Já na etapa de **Decoding**, a imagem realizará uma subida e, a cada nível, suas dimensões serão aumentadas e sua quantidade de layers diminuída (seguindo a mesma proporção da etapa de **Encoding**) até chegar nas dimensões originais e a quantidade de layers desejada. 
+Na etapa de **Encoding** a imagem irá realizar uma descida passando por meio de seus níveis, em cada nível a imagem terá suas dimensões diminuídas, porém a quantidade de layers aumentada. Já na etapa de **Decoding**, a imagem realizará uma subida e, a cada nível, suas dimensões serão aumentadas e sua quantidade de layers diminuída (seguindo a mesma proporção da etapa de **Encoding**) até chegar nas dimensões originais e a quantidade de layers desejada. 
 
-Além disso, por meio das **conexões atalho**, durante cada nível do **Decoding** haverá a concatenação da imagem atual com a imagem do respectivo nível da etapa de **Encoding**, a imagem com mesmas dimensões e quantidade de layers.
+Além disso, por meio das **conexões atalho**, durante cada nível do **Decoding** haverá a concatenação da imagem atual com a imagem do respectivo nível da etapa de **Encoding**, uma imagem com mesmas dimensões e quantidade de layers.
 
 Essas **conexões atalho** são utilizadas para enviar imagens diretamente da etapa de **Encoding** para a etapa de **Decoding** sem que elas precisem passar por todos os níveis. Isso permite que recursos de alto e baixa complexidade sejam preservados e aprendidos, por meio da redução do problema do **desaparecimento de gradientes**, reduzindo, assim, a perda de informações que pode ocorrer durante a etapa de **Encoding**.
 ___
 ## **Fowarding**
 Antes de construirmos nosso primeiro modelo utilizando os conhecimentos obtidos até aqui precisamos entender um último conceito.
 
-``Forwarding`, `Forward Pass` ou `Propagação Direta` é o processo pelo qual uma rede neural processa uma entrada e produz uma saída. Nele uma entrada passa sequencialmente por cada camada do modelo e, ao fim de todas elas, produz um resultado final.
+``Forwarding`, `Forward Pass` ou `Propagação Direta` é o processo pelo qual uma rede neural processa uma entrada e produz uma saída. Nele, uma entrada passa sequencialmente por cada camada do modelo e, ao fim de todas elas, produz um resultado final.
 
 Iremos implementá-lo nos nossos modelos por meio da definição da função `forward` que será chamada a cada execução do modelo.
 ___
@@ -59,9 +59,9 @@ tconv_out = nn.ConvTranspose2d(3, 2, kernel_size=3, stride=1, padding=1)
 ```
 Observe que a quantidade de layers das imagens que entram no `tconv1` e `tconv0` é o dobro da quantidade de layer que sai da `tconv2` e `tconv1`, respectivamente. Isso ocorre devido a concatenação das imagens que saem dessas camadas com as imagens vindas de suas respectivas **conexões atalho**. 
 
-Além disso, note a presença de uma camada de **convolução transposta** de saída que servirá ajustar a quantidade de layers que ficou diferente do objetivo (duas: A+B) após a concatenação das imagens do nível 0 (imagem em escala de cinza). Por fim, observe também que nos dois últimos níveis do **Decoder** não há à aplicação de camadas de **normalização em batches**. Essa escolha foi tomada devido a baixa efetividade da **normalização em batches** em poucas quantidades de layers.
+Além disso, note a presença de uma camada de **convolução transposta** de saída que servirá ajustar a quantidade de layers que ficou diferente do objetivo (duas: A+B) após a concatenação das imagens do nível 0 (imagem em escala de cinza). Por fim, observe também que nos dois últimos níveis do **Decoder** não há a aplicação de camadas de **normalização em batches**. Essa escolha foi tomada devido a baixa efetividade da **normalização em batches** em poucas quantidades de layers.
 
-A decida por cada nível da etapa de **Encoding** consistirá em aplicar a camada **convolucional**, seguida da camada de **normalização em batches** e por fim aplicação da função de ativação **ReLU**. 
+A descida por cada nível da etapa de **Encoding** consistirá em aplicar a camada **convolucional**, seguida da camada de **normalização em batches** e por fim aplicação da função de ativação **ReLU**. 
 ``` python title="Função de Forwarding (Encoder)"
 gray_conv1 = relu(self.conv1_bn(self.conv1(gray))) # Nível 1
 gray_conv2 = relu(self.conv2_bn(self.conv2(gray_conv1))) # Nível 2
@@ -69,8 +69,7 @@ gray_conv2 = relu(self.conv2_bn(self.conv2(gray_conv1))) # Nível 2
 gray_conv3 = relu(self.conv3_bn(self.conv3(gray_conv2))) # Nível de Transição
 ```
 
-Já a subida por cada nível da etapa de **Decoding** consistirá em aplicar a camada **convolucional transposta**, seguida da camada de **normalização em batches**, aplicar a função de ativação **ReLU** e por fim concatenar o resultado com a imagem resultade do respectivo nível da etapa de **Encoding**.
-Porém há uma pequena 
+Já a subida por cada nível da etapa de **Decoding** consistirá em aplicar a camada **convolucional transposta**, seguida da camada de **normalização em batches**, aplicar a função de ativação **ReLU** e por fim concatenar o resultado com a imagem resultante do respectivo nível da etapa de **Encoding**.
 ``` python title="Função de Forwarding (Decoder)"
 gray_tconv2 = relu(self.tconv2_bn(self.tconv2(gray_conv3)))
 gray_tconv2 = cat((gray_tconv2, gray_conv2), 1)
