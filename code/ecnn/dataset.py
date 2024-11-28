@@ -49,4 +49,4 @@ class ImageDataset(Dataset):
         # The color image consists of the 'a' and 'b' parts of the LAB format.
         color_layers = LAB_image[1:, :, :]
 
-        return gray_layer.float(), color_layers.float(), self.categories[filename]
+        return gray_layer.float(), color_layers.float(), self.categories.get(filename, 0)

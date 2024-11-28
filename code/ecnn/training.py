@@ -53,7 +53,7 @@ def train_model(
     models_dir = path.join(dir, "models")
     if not path.exists(models_dir):
         mkdir(models_dir)
-
+    model_file = path.join(models_dir, f"{model_name}.pt")
     # choosing the device
     device_name = "cuda" if torch.cuda.is_available() and cuda else "cpu"
     print(f"Training using [{device_name}]")
@@ -96,7 +96,7 @@ def train_model(
 
                 gray = gray.to(device)
                 color = color.to(device)
-                category = category.to(device)
+                category = category.to(device).int()
 
                 optimizer.zero_grad()
                 outputs = ecnn(gray, category)
@@ -123,8 +123,7 @@ def train_model(
                         "optimizer_state_dict": optimizer.state_dict(),
                         "time": time.time() - start + initial_time,
                         "running_losses": running_losses,
-                    },
-                    f"./checkpoints/{model_name}_checkpoint.pt",
+                    }, checkpoint_file,
                 )
 
         progress_bar.close()
@@ -137,7 +136,7 @@ def train_model(
                 "optimizer_state_dict": optimizer.state_dict(),
                 "time": time.time() - start + initial_time,
                 "running_losses": running_losses
-            }, f"./models/{model_name}.pt",
+            }, model_file,
         )
         
     except KeyboardInterrupt:
@@ -150,6 +149,6 @@ def train_model(
                 "optimizer_state_dict": optimizer.state_dict(),
                 "time": time.time() - start + initial_time,
                 "running_losses": running_losses
-            }, f"./checkpoints/{model_name}_checkpoint.pt",
+            }, checkpoint_file,
         )
         raise KeyboardInterrupt("Training interrupted!")

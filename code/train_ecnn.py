@@ -19,18 +19,18 @@ def main():
         'model_name': model_name,
         'images_folder': "train_color",
         'dir': dir_path,
-        'amount_images': -1, 
+        'amount_images': 16, 
         'learning_rate': 0.01,
-        'pin_memory': True,
-        'prefetch_factor': 4,
-        'num_workers': 4,
+        # 'pin_memory': True,
+        # 'prefetch_factor': 4,
+        # 'num_workers': 4,
     }
     try:
         # Training the model.
-        train_model(**train_params)
+        # train_model(**train_params)
 
         # Testing the model.
-        test_model(model, model_name, "test_color", dir_path)
+        test_model(model, model_name, "train_color", dir_path, gen_images=True)
         
     except KeyboardInterrupt as e:
         print(e)

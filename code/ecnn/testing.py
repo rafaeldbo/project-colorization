@@ -35,7 +35,7 @@ def test_model(
         
     # choosing the device
     device_name = "cuda" if torch.cuda.is_available() and cuda else "cpu"
-    print(f"Training using [{device_name}]")
+    print(f"Testing using [{device_name}]")
     device = torch.device(device_name)
 
     # Loading the NN and passing the data.
