@@ -5,7 +5,7 @@ ___
 
 A **normalização em Batches** (*Lotes*) surgiu com o propósito de remediar o **problema de mudança de covariável interna** (em inglês, *internal covariant shift problem*). Esse problema é causado pela variação da distribuição dos parâmetros das entradas, que pode dificultar na convergência do modelo, uma vez que torna o processo de treinamento mais lento do que deveria ser.
 
-Quando é feita a **normalização em mini-batches** (*mini-lotes*), isto é, quando a média é ajustada para 0 e a variância para 1, são utilizados dois novos parâmetros, o deslocamento e a escala, que servem para otimizar a normalização para as ativações. Dessa forma, o processo de aprendizado da rede neural é estabilizado, reduzindo a **mudança de covariável interna**, garantindo consistência entre as camadas do modelo.
+Quando é feita a **normalização em mini-batches** (*mini-lotes*), isto é, quando a média é ajustada para 0 e a variância para 1, são utilizados dois novos parâmetros, o deslocamento e a escala, que servem para otimizar a normalização para as ativações. Dessa forma, o processo de aprendizado da rede neural é estabilizado, reduzindo a **mudança de covariável interna** e garantindo consistência entre as camadas do modelo.
 
 Para criar uma camada de **normalização em Batches** é obrigatório apenas especificar a quantidade de características (*features*) que serão normalizadas. No caso das imagens, essas características podem ser os layers da imagem.
 

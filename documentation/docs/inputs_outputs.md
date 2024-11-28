@@ -1,6 +1,6 @@
 # **Entradas e Saídas do Modelo**
 
-Queremos treinar um modelo capaz de transformar imagens em preto e branco (escala de cinza) em imagens coloridas. Dessa forma, mesmo ele sendo generativo é mais correto afirmar que nosso modelo realizará uma melhoria na imagem, ou invés de criar uma totalmente nova.
+Queremos treinar um modelo capaz de transformar imagens em preto e branco (escala de cinza) em imagens coloridas. Dessa forma, mesmo ele sendo generativo é mais correto afirmar que nosso modelo realizará uma melhoria na imagem, ao invés de criar uma totalmente nova.
 
 ## **Entradas do Modelo**
 
@@ -27,17 +27,17 @@ gray_layer = LAB_img[0, :, :].unsqueeze(0)
 color_layers = LAB_img[1:, :, :] 
 ```
 
-Como nosso objetivo final é construir um modelo capaz de colorir imagens em preto e branco previamente categoriazadas, a outra entrada do modelo deverá ser a categoria na qual a imagem se encaixa. Essa categoria deverá ser um número inteiro que represente unicamente aquela categoria.
+Como nosso objetivo final é construir um modelo capaz de colorir imagens em preto e branco previamente categorizadas, a outra entrada do modelo deverá ser a categoria na qual a imagem se encaixa. Essa categoria deverá ser um número inteiro que represente unicamente aquela categoria.
 
 Nas categorias que usaremos, temos:
 
-1. Comida 
-2. Animal
-3. Pessoa
-4. Objeto
-5. Veículo
-6. Ambiente interno
-7. Ambiente externo
+1. Alimentos
+2. Animais
+3. Pessoas
+4. Objetos
+5. Veículos
+6. Ambientes internos
+7. Ambientes externos
 
 ## **Saída do Modelo**
 
