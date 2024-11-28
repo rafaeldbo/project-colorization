@@ -745,7 +745,7 @@
 
 
 <h1 id="entradas-e-saidas-do-modelo"><strong>Entradas e Saídas do Modelo</strong></h1>
-<p>Queremos treinar um modelo capaz de transformar imagens em preto e branco (escala de cinza) em imagens coloridas. Dessa forma, mesmo ele sendo generativo é mais correto afirmar que nosso modelo realizará uma melhoria na imagem, ou invés de criar uma totalmente nova.</p>
+<p>Queremos treinar um modelo capaz de transformar imagens em preto e branco (escala de cinza) em imagens coloridas. Dessa forma, mesmo ele sendo generativo é mais correto afirmar que nosso modelo realizará uma melhoria na imagem, ao invés de criar uma totalmente nova.</p>
 <h2 id="entradas-do-modelo"><strong>Entradas do Modelo</strong></h2>
 <p>A imagens são conjuntos de dados constituídos de 3 dimensões: Altura, Largura e uma terceira dimensão que consiste nas camadas que formam a cor da imagem. Formatos comuns, como <code>PNG</code> ou <code>JPG</code>, possuem essa dimensão de cor no sistema <code>RGB</code>, que divide essa dimensão em três camadas: <strong>R</strong>ed <strong>G</strong>reen <strong>B</strong>lue. Mesmo imagens em preto e branco, quando nesses formatos, possuem essas três camadas, porém elas poderiam ser representadas por apenas uma.</p>
 <p>Uma outra forma de representar camadas de cor é o sistema <code>LAB</code> que consiste em uma camada de <strong>L</strong>uminosidade e duas camadas de cor: camada <strong>A</strong>, que representa o equilíbrio entre o Vermelho e o Verde, e a camada <strong>B</strong> que representa o equilíbrio entre o Amarelo e o Azul. Utilizando esse sistema, é possível transformar imagens coloridas em imagens em preto e branco com uma única camada, para isso é necessário converter do sistema <code>RGB</code> para o <code>LAB</code> e remover suas duas camadas de cor, a <strong>A</strong> e a <strong>B</strong>.</p>
@@ -766,16 +766,16 @@
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># separa as camadas A e B</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">color_layers</span> <span class="o">=</span> <span class="n">LAB_img</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:,</span> <span class="p">:]</span> 
 </span></code></pre></div>
-<p>Como nosso objetivo final é construir um modelo capaz de colorir imagens em preto e branco previamente categoriazadas, a outra entrada do modelo deverá ser a categoria na qual a imagem se encaixa. Essa categoria deverá ser um número inteiro que represente unicamente aquela categoria.</p>
+<p>Como nosso objetivo final é construir um modelo capaz de colorir imagens em preto e branco previamente categorizadas, a outra entrada do modelo deverá ser a categoria na qual a imagem se encaixa. Essa categoria deverá ser um número inteiro que represente unicamente aquela categoria.</p>
 <p>Nas categorias que usaremos, temos:</p>
 <ol>
-<li>Comida </li>
-<li>Animal</li>
-<li>Pessoa</li>
-<li>Objeto</li>
-<li>Veículo</li>
-<li>Ambiente interno</li>
-<li>Ambiente externo</li>
+<li>Alimentos</li>
+<li>Animais</li>
+<li>Pessoas</li>
+<li>Objetos</li>
+<li>Veículos</li>
+<li>Ambientes internos</li>
+<li>Ambientes externos</li>
 </ol>
 <h2 id="saida-do-modelo"><strong>Saída do Modelo</strong></h2>
 <p>Após o processamento do modelo, ele nos devolverá duas novas camadas criadas a partir da camada <strong>L</strong>. Utilizaremos essas camadas como se fossem as camadas <strong>A</strong> e <strong>B</strong> faltantes junto a camada <strong>L</strong> original para formar a imagem colorida.</p>

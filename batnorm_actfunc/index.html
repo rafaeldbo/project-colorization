@@ -748,7 +748,7 @@
 <hr />
 <h2 id="normalizacao-em-batches-batch-normalization"><strong>Normalização em Batches</strong> (Batch normalization)</h2>
 <p>A <strong>normalização em Batches</strong> (<em>Lotes</em>) surgiu com o propósito de remediar o <strong>problema de mudança de covariável interna</strong> (em inglês, <em>internal covariant shift problem</em>). Esse problema é causado pela variação da distribuição dos parâmetros das entradas, que pode dificultar na convergência do modelo, uma vez que torna o processo de treinamento mais lento do que deveria ser.</p>
-<p>Quando é feita a <strong>normalização em mini-batches</strong> (<em>mini-lotes</em>), isto é, quando a média é ajustada para 0 e a variância para 1, são utilizados dois novos parâmetros, o deslocamento e a escala, que servem para otimizar a normalização para as ativações. Dessa forma, o processo de aprendizado da rede neural é estabilizado, reduzindo a <strong>mudança de covariável interna</strong>, garantindo consistência entre as camadas do modelo.</p>
+<p>Quando é feita a <strong>normalização em mini-batches</strong> (<em>mini-lotes</em>), isto é, quando a média é ajustada para 0 e a variância para 1, são utilizados dois novos parâmetros, o deslocamento e a escala, que servem para otimizar a normalização para as ativações. Dessa forma, o processo de aprendizado da rede neural é estabilizado, reduzindo a <strong>mudança de covariável interna</strong> e garantindo consistência entre as camadas do modelo.</p>
 <p>Para criar uma camada de <strong>normalização em Batches</strong> é obrigatório apenas especificar a quantidade de características (<em>features</em>) que serão normalizadas. No caso das imagens, essas características podem ser os layers da imagem.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -763,10 +763,10 @@
 <h2 id="referencias"><strong>Referências</strong></h2>
 <ol>
 <li><a href="https://www.geeksforgeeks.org/what-is-batch-normalization-in-deep-learning/">What is Batch Normalization In Deep Learning?</a></li>
-<li><a href="https://www.geeksforgeeks.org/internal-covariant-shift-problem-in-deep-learning/">Internal Covariant Shift Problem in Deep Learning</a></li>
+<li><a href="https://www.geeksforgeeks.org/3.internal-covariant-shift-problem-in-deep-learning/">Internal Covariant Shift Problem in Deep Learning</a></li>
+<li><a href="https://www.geeksforgeeks.org/activation-functions-neural-networks/">Activation functions in Neural Networks</a></li>
+<li><a href="https://medium.com/@meetkp/understanding-the-rectified-linear-unit-relu-a-key-activation-function-in-neural-networks-28108fba8f07">Understanding the Rectified Linear Unit (ReLU): A Key Activation Function in Neural Networks</a></li>
 </ol>
-<p>https://www.geeksforgeeks.org/activation-functions-neural-networks/</p>
-<p>https://medium.com/@meetkp/understanding-the-rectified-linear-unit-relu-a-key-activation-function-in-neural-networks-28108fba8f07</p>
 
 
 
