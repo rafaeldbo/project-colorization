@@ -28,8 +28,6 @@ ___
 ## **Referências**
 
 1. [What is Batch Normalization In Deep Learning?](https://www.geeksforgeeks.org/what-is-batch-normalization-in-deep-learning/)
-2. [Internal Covariant Shift Problem in Deep Learning](https://www.geeksforgeeks.org/internal-covariant-shift-problem-in-deep-learning/)
-
-https://www.geeksforgeeks.org/activation-functions-neural-networks/
-
-https://medium.com/@meetkp/understanding-the-rectified-linear-unit-relu-a-key-activation-function-in-neural-networks-28108fba8f07
+2. [Internal Covariant Shift Problem in Deep Learning](https://www.geeksforgeeks.org/3.internal-covariant-shift-problem-in-deep-learning/)
+3. [Activation functions in Neural Networks](https://www.geeksforgeeks.org/activation-functions-neural-networks/)
+4. [Understanding the Rectified Linear Unit (ReLU): A Key Activation Function in Neural Networks](https://medium.com/@meetkp/understanding-the-rectified-linear-unit-relu-a-key-activation-function-in-neural-networks-28108fba8f07)

@@ -44,7 +44,7 @@ def test_model(
 
     total_loss = 0  
     
-    print("Testing the model...")  
+    print(f"Testing the model usin [{images_folder}] dataset...")  
     total_batches = len(dataloader)
     progress_bar = tqdm(total=total_batches, desc="Testing Progress", position=0, bar_format='{l_bar}{bar:20}{r_bar}')
     # Creating an image grid to showcase the results.
