@@ -86,6 +86,9 @@ output = self.tconv_out(gray_tconv0)
 ???- example "Modelo Completo"
     Para criar um modelo completo e funcional, encapsularemos as duas partes acima em um classe:
     ``` python title="Modelo Completo"
+    from torch import nn, Tensor, cat
+    from torch.nn.functional import relu
+
     class UnetModel(nn.Module):
         def __init__(self) -> None:
             super().__init__()

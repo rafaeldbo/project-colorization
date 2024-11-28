@@ -4,7 +4,7 @@ Essa é a parte teórica do Tutorial de construção de um modelo de colorizaç�
 
 A parte prática desse tutorial está disponível [neste notebook]().
 
-Os códigos presentes no tutorial foram feita utilizando a biblioteca [PyTorch](https://github.com/pytorch/pytorch). O treinamento poderá ser feito utilizando o conjunto de treinamento do dataset [Image Colorization Dataset](https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset) e a classificação manual dessas imagens feita por nós, disponivel em: [Categories](https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/EeRQzARO6MVGhUKujV0i_WMBwYfJvLsDrpNNzvF-rBG-KA?e=WDF7Ng).
+Os códigos presentes no tutorial foram feita utilizando a biblioteca [PyTorch](https://github.com/pytorch/pytorch). O treinamento poderá ser feito utilizando o conjunto de treinamento do dataset [Image Colorization Dataset](https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset) e a classificação manual dessas imagens feita por nós, disponivel em: [Categories](https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/ETV6ST4HWAFFhvtF-JJ5HjsB_v9Fe3QacOhVpd3ynIYiyA?e=2W7cAB).
 
 As seguintes categorias foram usadas na classificação das imagens: `pessoas`, `alimentos`, `animais`, `veiculos`, `ambientes externos`, `ambientes internos` e `objetos`.
 
@@ -19,8 +19,3 @@ As seguintes categorias foram usadas na classificação das imagens: `pessoas`, 
 
 ### **Orientação**
 * Fábio José Ayres
-
-### **Referências**
-1) [Building an Image Colorization Neural Network](https://medium.com/@geokam/building-an-image-colorization-neural-network-part-4-implementation-7e8bb74616c)
-
-2) [CNN-Image-Colorization](https://github.com/gkamtzir/cnn-image-colorization)

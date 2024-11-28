@@ -11,16 +11,13 @@ Uma outra forma de representar camadas de cor é o sistema `LAB` que consiste em
 ``` python title="Trantando a Imagem de Entrada"
 img_path = "./exemplo.jpg"
 
-# lê uma imagem criando um tensor no formato (Cor, Largura, Altura)
-img = read_image(img_path) 
+# lê uma imagem criando um vetor de 3 dimensões (Largura, Altura, Cor)
+img = imread(img_path) 
 
-# reorganiza as dimensões para imagem para o formato padrão 
-img = img.permute(1, 2, 0) # (Largura, Altura, Cor) 
-
-# converte do sistema RGB para o LAB 
+# converte do sistema RGB para o LAB e a transforma em um Tensor
 LAB_img = from_numpy(rgb2lab(img)) 
 
-# reorganiza as dimensões para imagem para o formato do pytorch 
+# reorganiza as dimensões da imagem para o formato do pytorch 
 LAB_img = LAB_img.permute(2, 0, 1) # (Cor, Largura, Altura)
 
 # separa apenas a camada L
@@ -65,15 +62,14 @@ pred_RGB_img = lab2rgb(pred_LAB_img)
 ???- example "Código completo"
     ``` python title="Código completo"
     from torch import from_numpy, cat
-    from torchvision.io import read_image
+    from skimage.io import imread
     from skimage.color import rgb2lab, lab2rgb
 
+    # lê a imagem
     img_path = "./exemplo.jpg"
+    img = imread(img_path) 
 
     # converte a imagem de RGB para LAB
-    img = read_image(img_path) 
-    img = img.permute(1, 2, 0)
-
     LAB_img = from_numpy(rgb2lab(img)) 
     LAB_img = LAB_img.permute(2, 0, 1) 
 

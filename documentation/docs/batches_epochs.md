@@ -51,7 +51,7 @@ Uma **epoch** (ou *época*) é o hiperparâmetro que define a quantidade de veze
     # imports, Declaração do modelo, dataset, otimizador...
 
     for epoch in range(epochs):
-        for i, data in enumerate(dataloader): 
+        for i, batch in enumerate(dataloader): 
             
             # Rotina de Treinamento
 

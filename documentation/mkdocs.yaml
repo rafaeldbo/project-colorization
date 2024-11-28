@@ -75,21 +75,20 @@ plugins:
         - ">"
 
 extra_javascript:
-  - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav: 
   - Introdução: index.md
   - Contexto: context.md
-  - Entradas e Saídas do Modelo: inputs_outputs.md
-  - Tipo do Modelo: model_type.md
-  - Tipos de Convoluções: convolutions.md
-  - Normalização em Batches e Funções de Ativação: batnorm_actfunc.md
-  - Camada de Embeddings: embeddings.md
-  - Layout U-Net: unet.md
-  - Função de perda: loss_function.md
-  - Otimizador: optimizer.md
-  - Back-propagation: backpropagation.md
-  - Batches e Epochs: batches_epochs.md
-  - Multiprocessamento: multiprocessing.md
-  - Teste: test.md
+  - Construção do Modelo:
+    - Entradas e Saídas do Modelo: inputs_outputs.md
+    - Tipo do Modelo: model_type.md
+    - Tipos de Convoluções: convolutions.md
+    - Normalização em Batches e Funções de Ativação: batnorm_actfunc.md
+    - Camada de Embeddings: embeddings.md
+    - Layout U-Net: unet.md
+  - Rotina de Treinamento:
+    - Batches e Epochs: batches_epochs.md
+    - Otimização dos Parâmetros do Modelo: optimization.md
+    - Multiprocessamento: multiprocessing.md
+  - Testando o Modelo: testing.md
