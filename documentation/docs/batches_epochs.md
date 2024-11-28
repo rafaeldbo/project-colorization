@@ -19,7 +19,7 @@ Existem três tipos de algoritmos de aprendizado com base no `batch size`, sendo
 
 Em nosso modelo, por exemplo, utilizamos um `batch size` de 32 imagens, ou seja, utilizamos o algoritmo de **gradiente descendente por mini-batch** para aprendizagem do modelo.
 
-Os **Batches** são criados a partir da separação de uma base de dados em conjuntos menores de dados por meio de um `DataLoader`.Normalmente, o `DataLoader` gera os **Batches** de forma aleatorizada e os carrega na memória (seja ela a RAM, cache, ou da própria GPU) para que o modelo possa utiliza-los. Esse processo de carregamento é potencialmente um dos mais lentos durante o treinamento, porém ele pode ser acelerado por meio da utlização do multiprocessamento que discutiremos mais para frente.
+Os **Batches** são criados a partir da separação de uma base de dados em conjuntos menores de dados por meio de um `DataLoader`.Normalmente, o `DataLoader` gera os **Batches** de forma aleatorizada e os carrega na memória (seja ela a RAM, cache, ou da própria GPU) para que o modelo possa utilizá-los. Esse processo de carregamento é potencialmente um dos mais lentos durante o treinamento, porém ele pode ser acelerado por meio da utlização do multiprocessamento que discutiremos mais para frente.
 
 !!! example "Código: DataLoader"
     Um `DataLoader` pode ser declarado da seguinte forma:

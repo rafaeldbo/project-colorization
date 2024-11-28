@@ -7,7 +7,7 @@ ___
 
 As **funções de perda**, ou *loss functions*, são métricas utilizadas em Machine Learning para medir a __performance__ de um modelo utilizando os valores que foram previstos por ele em comparação aos valores reais da base de dados.
 
-Uma função muito comumente usada em diversos modelos de previsão (e será a que utilizaremos nesse tutorial) é o **Mean Squared Error** (`MSE`), que é calculado pela diferença da valor obtido pela previsão e o valor real presente na base de dados. A equação dessa métrica é dada por:
+Uma função muito comumente usada em diversos modelos de previsão (e será a que utilizaremos nesse tutorial) é o **Mean Squared Error** (`MSE`), que é calculado pela diferença do valor obtido pela previsão e o valor real presente na base de dados. A equação dessa métrica é dada por:
 
 $$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat y_i)^2$$
 
@@ -32,7 +32,7 @@ ___
 
 Após calcular o erro do modelo pela **função de perda**, é necessário ajustar os parâmetros do modelo para **minimizar** esse erro. A técnica de gradiente descendente irá determinar como devem ser feitos esses ajustes utilizando o **vetor gradiente** da função de perda. 
 
-O vetor gradiente é calculado através das derivadas parciais da função e o seu valor em cada ponto indicará a direção em que o crescimento da função é máximo (ou seja, o inverso do vetor gradiente indica a direção em que está o mínimo da função).
+O vetor gradiente é calculado através das derivadas parciais da função, e o seu valor em cada ponto indicará a direção em que o crescimento da função é máximo (ou seja, o inverso do vetor gradiente indica a direção em que está o mínimo da função).
 
 Com a informação obtida através do vetor gradiente, pode-se determinar quais variáveis do modelo devem ser alteradas e se elas devem aumentar ou diminuir para resultar na minimização do erro.
 
@@ -46,7 +46,7 @@ O vetor gradiente dessa função será dado por:
 
 $$(\frac{∂f}{∂a}, \frac{∂f}{∂b}, \frac{∂f}{∂c})$$
 
-Com o gradiente decendente a alteração das variáveis para chegar ao erro mínimo seria feita da seguinte forma:
+Com o gradiente descendente a alteração das variáveis para chegar ao erro mínimo seria feita da seguinte forma:
 
 $$a_{otim} = a - α\frac{∂f}{∂a}$$
 
