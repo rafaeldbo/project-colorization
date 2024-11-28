@@ -352,15 +352,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    <span class="md-ellipsis">
-      Referências
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -400,6 +391,41 @@
   
   
   
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Construção do Modelo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Construção do Modelo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="inputs_outputs/" class="md-nav__link">
         
@@ -413,9 +439,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -433,9 +460,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -453,9 +481,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -473,9 +502,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -493,9 +523,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -513,23 +544,11 @@
     </li>
   
 
-    
+              
+            
+          </ul>
+        </nav>
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="loss_function/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Função de perda
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -540,42 +559,37 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="optimizer/" class="md-nav__link">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
-    Otimizador
+    Rotina de Treinamento
   </span>
   
 
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="backpropagation/" class="md-nav__link">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-  
-  <span class="md-ellipsis">
-    Back-propagation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Rotina de Treinamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -593,9 +607,31 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Otimização dos Parâmetros do Modelo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
@@ -613,6 +649,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -621,11 +665,11 @@
   
   
     <li class="md-nav__item">
-      <a href="test/" class="md-nav__link">
+      <a href="testing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Teste
+    Testando o Modelo
   </span>
   
 
@@ -688,15 +732,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    <span class="md-ellipsis">
-      Referências
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -720,7 +755,7 @@
 <h1 id="ecnn-embedded-convolutional-neural-network">ECNN - Embedded Convolutional Neural Network</h1>
 <p>Essa é a parte teórica do Tutorial de construção de um modelo de colorização de imagens classificadas. Esse modelo deverá receber uma imagem em preto e branco (escala de cinza) e, utilizando o <code>tema da imagem</code>, tentará colorir essa imagem.</p>
 <p>A parte prática desse tutorial está disponível <a href="">neste notebook</a>.</p>
-<p>Os códigos presentes no tutorial foram feita utilizando a biblioteca <a href="https://github.com/pytorch/pytorch">PyTorch</a>. O treinamento poderá ser feito utilizando o conjunto de treinamento do dataset <a href="https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset">Image Colorization Dataset</a> e a classificação manual dessas imagens feita por nós, disponivel em: <a href="https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/EeRQzARO6MVGhUKujV0i_WMBwYfJvLsDrpNNzvF-rBG-KA?e=WDF7Ng">Categories</a>.</p>
+<p>Os códigos presentes no tutorial foram feita utilizando a biblioteca <a href="https://github.com/pytorch/pytorch">PyTorch</a>. O treinamento poderá ser feito utilizando o conjunto de treinamento do dataset <a href="https://www.kaggle.com/datasets/aayush9753/image-colorization-dataset">Image Colorization Dataset</a> e a classificação manual dessas imagens feita por nós, disponivel em: <a href="https://alinsperedu-my.sharepoint.com/:x:/g/personal/rafaeldbo_al_insper_edu_br/ETV6ST4HWAFFhvtF-JJ5HjsB_v9Fe3QacOhVpd3ynIYiyA?e=2W7cAB">Categories</a>.</p>
 <p>As seguintes categorias foram usadas na classificação das imagens: <code>pessoas</code>, <code>alimentos</code>, <code>animais</code>, <code>veiculos</code>, <code>ambientes externos</code>, <code>ambientes internos</code> e <code>objetos</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Alerta</p>
@@ -737,9 +772,6 @@
 <ul>
 <li>Fábio José Ayres</li>
 </ul>
-<h3 id="referencias"><strong>Referências</strong></h3>
-<p>1) <a href="https://medium.com/@geokam/building-an-image-colorization-neural-network-part-4-implementation-7e8bb74616c">Building an Image Colorization Neural Network</a></p>
-<p>2) <a href="https://github.com/gkamtzir/cnn-image-colorization">CNN-Image-Colorization</a></p>
 
 
 
@@ -794,8 +826,6 @@
       <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="assets/_markdown_exec_pyodide.js"></script>
-      
-        <script src="javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
